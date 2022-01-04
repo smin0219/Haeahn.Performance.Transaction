@@ -1,0 +1,5 @@
+Log Entry : 오후 2:35:08 2021년 12월 29일 수요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.User..ctor()
+   at Haeahn.Performance.Revit.ExternalApplication.OnStartup(UIControlledApplication application)
+-------------------------------------------------------
