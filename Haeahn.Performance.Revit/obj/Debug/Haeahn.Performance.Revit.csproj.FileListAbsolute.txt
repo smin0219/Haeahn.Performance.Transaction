@@ -81,4 +81,3 @@ C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.pdb
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Newtonsoft.Json.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Newtonsoft.Json.xml
-C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.csproj.CopyComplete

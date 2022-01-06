@@ -1,4 +1,5 @@
 ﻿using Autodesk.Revit.DB;
+using Haeahn.Performance.Revit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace Haeahn.Performance.Revit
 {
     public class EmployeeManager
     {
-        internal Employee GetCurrentUser()
+        internal static Employee employee;
+        internal Employee GetEmployee(string employeeId)
         {
             var employee = new Employee();
-            employee.EmployeeName = ExternalApplication.rvt_uiapp.Application.Username;
-            employee.EmployeeId = "20210916";
+            employee.Name = "sj.min";
+            employee.Id = employeeId;
             employee.Department = "IT연구실";
             return employee;
         }
