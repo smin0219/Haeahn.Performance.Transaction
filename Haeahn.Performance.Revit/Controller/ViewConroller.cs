@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Haeahn.Performance.Revit
 {
-    class ViewManager
+    class ViewConroller
     {
         internal string GetViewType(Autodesk.Revit.DB.View activeView)
         {

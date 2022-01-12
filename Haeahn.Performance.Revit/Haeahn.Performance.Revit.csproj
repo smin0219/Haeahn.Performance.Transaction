@@ -54,30 +54,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\GeometryController.cs" />
     <Compile Include="Data\DAO.cs" />
     <Compile Include="Geometry.cs" />
-    <Compile Include="Manager\ElementManager.cs" />
+    <Compile Include="Controller\ElementController.cs" />
     <Compile Include="Enum.cs" />
     <Compile Include="ExternalApplication.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="Manager\ParameterManager.cs" />
-    <Compile Include="Manager\ProjectManager.cs" />
-    <Compile Include="Manager\SessionManager.cs" />
-    <Compile Include="Manager\TransactionManager.cs" />
-    <Compile Include="Object\ElementState.cs" />
-    <Compile Include="Object\Project.cs" />
+    <Compile Include="Controller\JsonController.cs" />
+    <Compile Include="Controller\ParameterController.cs" />
+    <Compile Include="Controller\ProjectController.cs" />
+    <Compile Include="Controller\SessionController.cs" />
+    <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Model\Edge.cs" />
+    <Compile Include="Model\Element.cs" />
+    <Compile Include="Model\Face.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\Solid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Object\Session.cs" />
-    <Compile Include="Object\Transaction.cs" />
-    <Compile Include="Object\Employee.cs" />
-    <Compile Include="Manager\EmployeeManager.cs" />
-    <Compile Include="Manager\ViewManager.cs" />
+    <Compile Include="Model\Session.cs" />
+    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
+    <Compile Include="Controller\ViewConroller.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Revit.exe.config" />
     <None Include="Performance.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

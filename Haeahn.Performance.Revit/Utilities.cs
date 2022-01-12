@@ -50,10 +50,10 @@ namespace Haeahn.Performance.Revit
         {
             return new Dictionary<string, string> { { "Max", this.PointToString(boundingBox.Max) }, { "Min", this.PointToString(boundingBox.Min) } };
         }
-        public List<XYZ> GetCanonicVerticies(Element element)
+        public List<XYZ> GetCanonicVerticies(Autodesk.Revit.DB.Element rvt_element)
         {
-            GeometryElement geoElement = element.get_Geometry(new Options());
-            Transform transform = Transform.Identity;
+            Autodesk.Revit.DB.GeometryElement geoElement = rvt_element.get_Geometry(new Options());
+            Autodesk.Revit.DB.Transform transform = Transform.Identity;
             Dictionary<XYZ, int> vertexLookup = new Dictionary<XYZ, int>();
 
             AddVertices(vertexLookup, transform, geoElement);
@@ -104,7 +104,7 @@ namespace Haeahn.Performance.Revit
             properties.Sort();
             return "{" + string.Join(",", properties) + "}";
         }
-        public void AddVertices(Dictionary<XYZ, int> vertexLookup, Transform t, Solid s)
+        public void AddVertices(Dictionary<Autodesk.Revit.DB.XYZ, int> vertexLookup, Autodesk.Revit.DB.Transform t, Autodesk.Revit.DB.Solid s)
         {
             try
             {
@@ -113,7 +113,7 @@ namespace Haeahn.Performance.Revit
 
                 if (!(s.Edges.Size > 0))
                 {
-                    foreach (Face f in s.Faces)
+                    foreach (Autodesk.Revit.DB.Face f in s.Faces)
                     {
                         Mesh m = f.Triangulate();
 
@@ -143,7 +143,7 @@ namespace Haeahn.Performance.Revit
             }
 
         }
-        public void AddVertices(Dictionary<XYZ, int> vertexLookup, Transform transform, GeometryElement geoElement)
+        public void AddVertices(Dictionary<Autodesk.Revit.DB.XYZ, int> vertexLookup, Autodesk.Revit.DB.Transform transform, Autodesk.Revit.DB.GeometryElement geoElement)
         {
             try
             {
@@ -154,7 +154,7 @@ namespace Haeahn.Performance.Revit
 
                 foreach (GeometryObject obj in geoElement)
                 {
-                    Solid solid = obj as Solid;
+                    Autodesk.Revit.DB.Solid solid = obj as Autodesk.Revit.DB.Solid;
 
                     if (solid != null)
                     {

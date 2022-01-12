@@ -8,12 +8,11 @@ using System.Threading.Tasks;
 
 namespace Haeahn.Performance.Revit
 {
-    public class EmployeeManager
+    public class EmployeeController
     {
-        internal static Employee employee;
         internal Employee GetEmployee(string employeeId)
         {
-            var employee = new Employee();
+            Employee employee = new Employee();
             employee.Name = "sj.min";
             employee.Id = employeeId;
             employee.Department = "IT연구실";

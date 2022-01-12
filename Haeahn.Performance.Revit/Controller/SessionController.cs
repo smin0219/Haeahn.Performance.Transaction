@@ -8,19 +8,24 @@ using System.Threading.Tasks;
 
 namespace Haeahn.Performance.Revit
 {
-    class SessionManager
+    class SessionController
     {
-        internal Session GetSession(Project project, Employee employee)
+        internal Session GetSession(Employee employee, Project project = null)
         {
             var currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
 
             Session session = new Session();
-            session.ProjectCode = project.Code;
-            session.ProjectName = project.Name;
+            
             session.UserId = employee.Id;
             session.UserName = employee.Name;
             session.StartTime = null;
             session.EndTime = null;
+
+            if(project != null)
+            {
+                session.ProjectCode = project.Code;
+                session.ProjectName = project.Name;
+            }
 
             return session;
         }

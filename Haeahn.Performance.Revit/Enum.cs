@@ -12,7 +12,6 @@ namespace Haeahn.Performance.Revit
         Model,
         Others
     }
-
     public enum EventType
     {
         Added,

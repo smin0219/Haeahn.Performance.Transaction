@@ -1,5 +1,6 @@
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Haeahn.Performance.Revit.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Haeahn.Performance.Revit.pdb
+C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Newtonsoft.Json.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\RevitAPI.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\RevitAPIUI.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\AdpSDKCSharpWrapper.dll
@@ -58,6 +59,7 @@ C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Autodesk.UI.Themes.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\CompositionServices.dll
+C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Newtonsoft.Json.xml
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\RevitAPI.xml
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\RevitAPIUI.xml
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\RevitAddInUtility.xml
@@ -75,9 +77,9 @@ C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\ru-RU\AdWindows.resources.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\zh-CN\AdWindows.resources.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\zh-TW\AdWindows.resources.dll
-C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.csproj.AssemblyReference.cache
+C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.Properties.Resources.resources
+C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.csproj.GenerateResource.cache
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.csproj.CoreCompileInputs.cache
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.dll
 C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.pdb
-C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Newtonsoft.Json.dll
-C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\bin\Debug\Newtonsoft.Json.xml
+C:\Users\SungjaeMin\source\repos\Haeahn.Performance\Haeahn.Performance.Revit\obj\Debug\Haeahn.Performance.Revit.csproj.AssemblyReference.cache

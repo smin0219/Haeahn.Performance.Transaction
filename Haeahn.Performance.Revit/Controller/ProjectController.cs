@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Autodesk.Revit.DB;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -7,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Haeahn.Performance.Revit
 {
-    class ProjectManager
+    class ProjectController
     {
-        internal Project GetProject(string projectName, string projectCode)
+        internal Project GetProject(ProjectInfo projectInfo)
         {
             Autodesk.Revit.DB.Document rvt_doc = ExternalApplication.rvt_doc;
             if(rvt_doc != null)
             {
                 Project project = new Project();
-                project.Name = projectName;
-                project.Code = projectCode;
+                project.Name = projectInfo.Name;
+                project.Code = projectInfo.Number.ToString();
                 return project;
             }
             else
