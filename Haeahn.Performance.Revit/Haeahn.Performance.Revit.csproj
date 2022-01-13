@@ -66,10 +66,12 @@
     <Compile Include="Controller\ProjectController.cs" />
     <Compile Include="Controller\SessionController.cs" />
     <Compile Include="Controller\TransactionController.cs" />
+    <Compile Include="Model\Curve.cs" />
     <Compile Include="Model\Edge.cs" />
     <Compile Include="Model\Element.cs" />
     <Compile Include="Model\Face.cs" />
     <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\Reference.cs" />
     <Compile Include="Model\Solid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Session.cs" />

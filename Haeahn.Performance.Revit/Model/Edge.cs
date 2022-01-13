@@ -9,8 +9,7 @@ namespace Haeahn.Performance.Revit
 {
     class Edge
     {
-        public string Id { get; set; }
         public double ApproximateLength { get; set; }
-        public List<XYZ> EndPoint { get; set; }
+        public Reference Reference { get; set; }
     }
 }

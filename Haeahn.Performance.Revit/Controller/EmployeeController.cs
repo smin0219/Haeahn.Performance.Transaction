@@ -10,7 +10,7 @@ namespace Haeahn.Performance.Revit
 {
     public class EmployeeController
     {
-        internal Employee GetEmployee(string employeeId)
+        internal Employee CreateEmployee(string employeeId)
         {
             Employee employee = new Employee();
             employee.Name = "sj.min";

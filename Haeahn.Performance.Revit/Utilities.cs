@@ -21,7 +21,7 @@ namespace Haeahn.Performance.Revit
             return string.Format("{0},{1},{2}", point.X.ToString(), point.Y.ToString(), point.Z.ToString());
         }
 
-        public string CurveTessellateToString(Curve curve)
+        public string CurveTessellateToString(Autodesk.Revit.DB.Curve curve)
         {
             return PointArrayToString(curve.Tessellate());
         }

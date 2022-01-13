@@ -22,21 +22,21 @@ namespace Haeahn.Performance.Revit
         }
 
         #region INSERT
-        internal void InsertProjectIntoDB(Project project)
+        internal void InsertProject(Project project)
         {
             var currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
             EmployeeController employeeController = new EmployeeController();
-            Employee employee = employeeController.GetEmployee("20210916");
+            Employee employee = employeeController.CreateEmployee("20210916");
 
             try
             {
                 using (SqlConnection connection = new SqlConnection())
                 {
-                    SqlCommand command = new SqlCommand("INSERT INTO project VALUES (@code, @name, @created_on, @created_by)", connection);
+                    SqlCommand command = new SqlCommand("INSERT INTO project VALUES (@code, @name, @created_user, @created_datetime)", connection);
                     command.Parameters.Add("@code", SqlDbType.NVarChar).Value = (object)project.Code ?? DBNull.Value;
                     command.Parameters.Add("@name", SqlDbType.NVarChar).Value = (object)project.Name ?? DBNull.Value;
-                    command.Parameters.Add("@created_on", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
-                    command.Parameters.Add("@created_by", SqlDbType.NVarChar).Value = (object)employee.Name ?? DBNull.Value;
+                    command.Parameters.Add("@created_user", SqlDbType.NVarChar).Value = (object)employee.Name ?? DBNull.Value;
+                    command.Parameters.Add("@created_datetime", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
 
                     connection.ConnectionString = GetConnectionString();
                     connection.Open();
@@ -49,14 +49,14 @@ namespace Haeahn.Performance.Revit
                 Log.WriteToFile(ex.ToString());
             }
         }
-        internal void InsertElementsIntoDB(IEnumerable<Element> elements)
+        internal void InsertElements(IEnumerable<Element> elements)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection())
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO element VALUES" +
-                        "(@id, @name, @project_code, @project_name, @category_name, @family_name, @type_name, " +
+                        "(@id, @name, @project_code, @project_name, @category_name, @category_type, @family_name, @type_name, " +
                         "@location, @geometry, @verticies, @bounding_box, @instance_parameter, @type_parameter)", connection);
 
                     command.Parameters.Add("@id", SqlDbType.NVarChar);
@@ -64,6 +64,7 @@ namespace Haeahn.Performance.Revit
                     command.Parameters.Add("@project_code", SqlDbType.NVarChar);
                     command.Parameters.Add("@project_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@category_name", SqlDbType.NVarChar);
+                    command.Parameters.Add("@category_type", SqlDbType.NVarChar);
                     command.Parameters.Add("@family_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@type_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@location", SqlDbType.NVarChar);
@@ -83,6 +84,7 @@ namespace Haeahn.Performance.Revit
                         command.Parameters["@project_code"].Value = (object)element.ProjectCode ?? DBNull.Value;
                         command.Parameters["@project_name"].Value = (object)element.ProjectName ?? DBNull.Value;
                         command.Parameters["@category_name"].Value = (object)element.CategoryName ?? DBNull.Value;
+                        command.Parameters["@category_type"].Value = (object)element.CategoryType ?? DBNull.Value;
                         command.Parameters["@family_name"].Value = (object)element.FamilyName ?? DBNull.Value;
                         command.Parameters["@type_name"].Value = (object)element.TypeName ?? DBNull.Value;
                         command.Parameters["@location"].Value = (object)element.Location ?? DBNull.Value;
@@ -93,8 +95,6 @@ namespace Haeahn.Performance.Revit
                         command.Parameters["@type_parameter"].Value = (object)element.TypeParameter ?? DBNull.Value;
                         command.ExecuteNonQuery();
                     }
-
-                    
                 }
             }
             catch(Exception ex)
@@ -103,9 +103,45 @@ namespace Haeahn.Performance.Revit
                 Log.WriteToFile(ex.ToString());
             }
         }
-        internal void InsertTransactionsIntoDB(IEnumerable<Transaction> transactions, EventType eventType)
+        internal void InsertTransactions(IEnumerable<Transaction> transactions)
         {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection())
+                {
+                    SqlCommand command = new SqlCommand("INSERT INTO transaction_log VALUES" +
+                        "(@project_code, @element_id, @element_name, @category_type, @difference, @event_type, @event_datetime)", connection);
 
+                    command.Parameters.Add("@project_code", SqlDbType.NVarChar);
+                    command.Parameters.Add("@element_id", SqlDbType.NVarChar);
+                    command.Parameters.Add("@element_name", SqlDbType.NVarChar);
+                    command.Parameters.Add("@category_type", SqlDbType.NVarChar);
+                    command.Parameters.Add("@difference", SqlDbType.NVarChar);
+                    command.Parameters.Add("@event_type", SqlDbType.NVarChar);
+                    command.Parameters.Add("@event_datetime", SqlDbType.NVarChar);
+
+                    connection.ConnectionString = GetConnectionString();
+                    connection.Open();
+
+                    foreach (var transaction in transactions)
+                    {
+                        command.Parameters["@project_code"].Value = (object)transaction.ProjectCode ?? DBNull.Value;
+                        command.Parameters["@element_id"].Value = (object)transaction.ElementId ?? DBNull.Value;
+                        command.Parameters["@element_name"].Value = (object)transaction.ElementName?? DBNull.Value;
+                        command.Parameters["@category_type"].Value = (object)transaction.CategoryType ?? DBNull.Value;
+                        command.Parameters["@difference"].Value = (object)transaction.Difference ?? DBNull.Value;
+                        command.Parameters["@event_type"].Value = (object)transaction.EventType ?? DBNull.Value;
+                        command.Parameters["@event_datetime"].Value = (object)transaction.EventDateTime ?? DBNull.Value;
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.ToString());
+                Log.WriteToFile(ex.ToString());
+            }
         }
         internal void InsertSession(Session session)
         {
@@ -114,7 +150,7 @@ namespace Haeahn.Performance.Revit
         #endregion
 
         #region SELECT
-        internal string SelectProjectCodeFromDB(Project project)
+        internal string SelectProjectCode(Project project)
         {
             try
             { 
@@ -143,7 +179,7 @@ namespace Haeahn.Performance.Revit
                 return null;
             }
         }
-        internal IEnumerable<Element> SelectAllElementsFromDB(Project project)
+        internal IEnumerable<Element> SelectAllElements(Project project)
         {
             try
             {
@@ -190,5 +226,86 @@ namespace Haeahn.Performance.Revit
         }
         #endregion
 
+        #region DELETE
+        internal void DeleteElements(IEnumerable<string> elementIds)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection())
+                {
+                    SqlCommand command = new SqlCommand("DELETE FROM element WHERE id = @element_id and project_code = @project_code", connection);
+                    command.Parameters.Add("@element_id", SqlDbType.NVarChar);
+                    command.Parameters.Add("@project_code", SqlDbType.NVarChar);
+
+                    connection.ConnectionString = GetConnectionString();
+                    connection.Open();
+
+                    foreach (var elementId in elementIds)
+                    {
+                        command.Parameters["@element_id"].Value = (object)elementId ?? DBNull.Value;
+                        command.Parameters["@project_code"].Value = (object)ExternalApplication.projectCode ?? DBNull.Value;
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.Assert(false, ex.ToString());
+                Log.WriteToFile(ex.ToString());
+            }
+        }
+        #endregion
+
+        #region UPDATE
+        internal void UpdateElements(IEnumerable<Element> elements)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection())
+                {
+                    SqlCommand command = new SqlCommand("UPDATE element SET " +
+                                                        "location = @location, " +
+                                                        "geometry = @geometry, " +
+                                                        "verticies = @verticies," +
+                                                        "bounding_box = @bounding_box, " +
+                                                        "instance_parameter = @instance_parameter," +
+                                                        "type_parameter = @type_parameter " +
+                                                        "WHERE id = @element_id AND project_code = @project_code" , connection);
+
+                    command.Parameters.Add("@location", SqlDbType.NVarChar);
+                    command.Parameters.Add("@geometry", SqlDbType.NVarChar);
+                    command.Parameters.Add("@verticies", SqlDbType.NVarChar);
+                    command.Parameters.Add("@bounding_box", SqlDbType.NVarChar);
+                    command.Parameters.Add("@instance_parameter", SqlDbType.NVarChar);
+                    command.Parameters.Add("@type_parameter", SqlDbType.NVarChar);
+                    command.Parameters.Add("@element_id", SqlDbType.NVarChar);
+                    command.Parameters.Add("@project_code", SqlDbType.NVarChar);
+
+                    foreach (var element in elements)
+                    {
+                        command.Parameters["@location"].Value = (object)element.Location ?? DBNull.Value;
+                        command.Parameters["@geometry"].Value = (object)element.Geometry ?? DBNull.Value;
+                        command.Parameters["@verticies"].Value = (object)element.Verticies ?? DBNull.Value;
+                        command.Parameters["@bounding_box"].Value = (object)element.BoundingBox ?? DBNull.Value;
+                        command.Parameters["@instance_parameter"].Value = (object)element.InstanceParameter ?? DBNull.Value;
+                        command.Parameters["@type_parameter"].Value = (object)element.TypeParameter ?? DBNull.Value;
+                        command.Parameters["@element_id"].Value = (object)element.Id ?? DBNull.Value;
+                        command.Parameters["@project_code"].Value = (object)ExternalApplication.projectCode ?? DBNull.Value;
+                    }
+
+                    connection.ConnectionString = GetConnectionString();
+                    connection.Open();
+
+                    command.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.ToString());
+                Log.WriteToFile(ex.ToString());
+            }
+        }
+        #endregion
     }
 }

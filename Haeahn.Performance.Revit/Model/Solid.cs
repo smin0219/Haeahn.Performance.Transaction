@@ -8,9 +8,15 @@ namespace Haeahn.Performance.Revit
 {
     class Solid
     {
-        public string SurfaceArea { get; set; }
-        public string Volume { get; set; }
-        public List<Face> Face { get; set; }
-        public List<Edge> Edge { get; set; }
+        internal Solid()
+        {
+            this.Faces = new List<Face>();
+            this.Edges = new List<Edge>();
+        }
+        public string GeometryType { get; set; }
+        public double SurfaceArea { get; set; }
+        public double Volume { get; set; }
+        public List<Face> Faces { get; set; }
+        public List<Edge> Edges { get; set; }
     }
 }

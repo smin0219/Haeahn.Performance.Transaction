@@ -8,11 +8,11 @@ namespace Haeahn.Performance.Revit
 {
     class Face
     {
-        public string Id { get; set; }
-        public string Area { get; set; }
-        public string HasRegions { get; set; }
-        public string IsTwoSided { get; set; }
+        public int Id { get; set; }
+        public double Area { get; set; }
+        public bool HasRegions { get; set; }
+        public bool IsTwoSided { get; set; }
         public string MaterialElementId { get; set; }
-        public string OrientationMatchesSurfaceOrientation { get; set; }
+        public bool OrientationMatchesSurfaceOrientation { get; set; }
     }
 }
