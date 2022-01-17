@@ -1,0 +1,1141 @@
+Log Entry : 오전 9:42:55 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 09:42:54 AM
+-------------------------------------------------------
+Log Entry : 오전 10:19:27 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 10:19:27 AM
+-------------------------------------------------------
+Log Entry : 오전 10:19:34 2022년 1월 14일 금요일
+   Temp. Level 1(349232) has been added -- 20220114 10:19:34 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:38 2022년 1월 14일 금요일
+   Generic - 200mm(349233) has been added -- 20220114 10:19:34 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:38 2022년 1월 14일 금요일
+   Group 1(349244) has been added -- 20220114 10:19:34 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:38 2022년 1월 14일 금요일
+   Group 1(349245) has been added -- 20220114 10:19:34 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:39 2022년 1월 14일 금요일
+  element(349232) has been deleted -- 20220114 10:26:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:39 2022년 1월 14일 금요일
+  element(349244) has been deleted -- 20220114 10:26:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:39 2022년 1월 14일 금요일
+  element(349245) has been deleted -- 20220114 10:26:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:26:45 2022년 1월 14일 금요일
+  element(349233) has been modified -- 20220114 10:26:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Generic - 200mmModify type attributes(349257) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Generic - 200mmModify type attributes(349258) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349259) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   ExtentElem(349260) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349261) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Title w Line(349262) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349263) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Level 1(349264) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349265) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Level 1(349266) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349267) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   ExtentElem(349268) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349269) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Title w Line(349270) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349271) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Work Plane Grid(349272) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Modify type attributes(349273) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Linear Dimension Style(349274) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:07 2022년 1월 14일 금요일
+   Linear Dimension Style(349275) has been added -- 20220114 10:27:07 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:13 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349257) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349258) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349259) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349260) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349261) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349262) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349263) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349264) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349265) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349266) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349267) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349268) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349269) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349270) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349271) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349272) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349273) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349274) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+  element(349275) has been deleted -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Interior - 135mm Partition (2-hr)Modify type attributes(349277) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Interior - 135mm Partition (2-hr)Modify type attributes(349278) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349279) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   ExtentElem(349280) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349281) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Title w Line(349282) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349283) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Level 1(349284) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349285) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Level 1(349286) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349287) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   ExtentElem(349288) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349289) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Title w Line(349290) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349291) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Work Plane Grid(349292) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Modify type attributes(349293) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Linear Dimension Style(349294) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:22 2022년 1월 14일 금요일
+   Linear Dimension Style(349295) has been added -- 20220114 10:27:22 AM
+-------------------------------------------------------
+Log Entry : 오전 10:27:28 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349277) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349278) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349279) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349280) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349281) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349282) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349283) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349284) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349285) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349286) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349287) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349288) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349289) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349290) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349291) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349292) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349293) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349294) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+  element(349295) has been deleted -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Interior - 135mm Partition (2-hr)Modify type attributes(349297) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Interior - 135mm Partition (2-hr)Modify type attributes(349298) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349299) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   ExtentElem(349300) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349301) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Title w Line(349302) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349303) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Level 1(349304) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349305) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Level 1(349306) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349307) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   ExtentElem(349308) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349309) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Title w Line(349310) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349311) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Work Plane Grid(349312) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Modify type attributes(349313) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Linear Dimension Style(349314) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:39 2022년 1월 14일 금요일
+   Linear Dimension Style(349315) has been added -- 20220114 10:29:39 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:42 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349297) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349298) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349299) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349300) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349301) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349302) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349303) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349304) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349305) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349306) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349307) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349308) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349309) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349310) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349311) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349312) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349313) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349314) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:29:45 2022년 1월 14일 금요일
+  element(349315) has been deleted -- 20220114 10:29:45 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Generic - 200mmModify type attributes(349324) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Generic - 200mmModify type attributes(349325) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349326) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   ExtentElem(349327) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349328) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Title w Line(349329) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349330) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Level 1(349331) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349332) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Level 1(349333) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349334) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   ExtentElem(349335) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349336) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Title w Line(349337) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349338) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Work Plane Grid(349339) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Modify type attributes(349340) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Linear Dimension Style(349341) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:55 2022년 1월 14일 금요일
+   Linear Dimension Style(349342) has been added -- 20220114 10:42:55 AM
+-------------------------------------------------------
+Log Entry : 오전 10:42:57 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349324) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349325) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349326) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349327) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349328) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349329) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349330) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349331) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349332) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349333) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349334) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349335) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349336) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349337) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349338) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349339) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349340) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349341) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+  element(349342) has been deleted -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Exterior - Render on Brick on BlockModify type attributes(349344) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Exterior - Render on Brick on BlockModify type attributes(349345) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349346) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   ExtentElem(349347) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349348) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Title w Line(349349) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349350) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Level 1(349351) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349352) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Level 1(349353) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349354) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   ExtentElem(349355) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349356) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Title w Line(349357) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349358) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Work Plane Grid(349359) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Modify type attributes(349360) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Linear Dimension Style(349361) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   Linear Dimension Style(349362) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   (349363) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:05 2022년 1월 14일 금요일
+   (349364) has been added -- 20220114 10:43:05 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:09 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:43:18 2022년 1월 14일 금요일
+  element(349344) has been modified -- 20220114 10:43:18 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:18 2022년 1월 14일 금요일
+  element(349345) has been modified -- 20220114 10:43:18 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:18 2022년 1월 14일 금요일
+  element(349361) has been modified -- 20220114 10:43:18 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:18 2022년 1월 14일 금요일
+  element(349362) has been modified -- 20220114 10:43:18 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:24 2022년 1월 14일 금요일
+  Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오전 10:43:24 2022년 1월 14일 금요일
+  element(349344) has been modified -- 20220114 10:43:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:26 2022년 1월 14일 금요일
+  Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오전 10:43:26 2022년 1월 14일 금요일
+  element(349345) has been modified -- 20220114 10:43:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:26 2022년 1월 14일 금요일
+  element(349361) has been modified -- 20220114 10:43:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:26 2022년 1월 14일 금요일
+  element(349362) has been modified -- 20220114 10:43:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:26 2022년 1월 14일 금요일
+  element(349363) has been modified -- 20220114 10:43:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:26 2022년 1월 14일 금요일
+  element(349364) has been modified -- 20220114 10:43:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349344) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349345) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349346) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349347) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349348) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349349) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349350) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349351) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349352) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349353) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349354) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349355) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349356) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349357) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349358) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349359) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349360) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349361) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:29 2022년 1월 14일 금요일
+  element(349362) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+  element(349363) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+  element(349364) has been deleted -- 20220114 10:43:29 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Exterior - Render on Brick on BlockModify type attributes(349378) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Exterior - Render on Brick on BlockModify type attributes(349379) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349380) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   ExtentElem(349381) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349382) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Title w Line(349383) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349384) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Level 1(349385) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349386) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Level 1(349387) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349388) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   ExtentElem(349389) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349390) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Title w Line(349391) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349392) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Work Plane Grid(349393) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Modify type attributes(349394) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Linear Dimension Style(349395) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   Linear Dimension Style(349396) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   (349397) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:30 2022년 1월 14일 금요일
+   (349398) has been added -- 20220114 10:43:30 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:47 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349378) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349379) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349380) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349381) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349382) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349383) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349384) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349385) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349386) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349387) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349388) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349389) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349390) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349391) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349392) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349393) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349394) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349395) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349396) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349397) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:56 2022년 1월 14일 금요일
+  element(349398) has been deleted -- 20220114 10:43:56 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:02 2022년 1월 14일 금요일
+   Temp. Level 1(349461) has been added -- 20220114 10:53:02 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:02 2022년 1월 14일 금요일
+   Generic - 200mm(349462) has been added -- 20220114 10:53:02 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:02 2022년 1월 14일 금요일
+   Group 1(349477) has been added -- 20220114 10:53:02 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:02 2022년 1월 14일 금요일
+   Group 1(349478) has been added -- 20220114 10:53:02 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:03 2022년 1월 14일 금요일
+  element(349461) has been deleted -- 20220114 10:53:03 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:03 2022년 1월 14일 금요일
+  element(349477) has been deleted -- 20220114 10:53:03 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:03 2022년 1월 14일 금요일
+  element(349478) has been deleted -- 20220114 10:53:03 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:03 2022년 1월 14일 금요일
+  element(349462) has been modified -- 20220114 10:53:03 AM
+-------------------------------------------------------
+Log Entry : 오전 10:53:40 2022년 1월 14일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentChanged(Object sender, DocumentChangedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오전 10:54:15 2022년 1월 14일 금요일
+  Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오전 10:54:15 2022년 1월 14일 금요일
+  element(349462) has been modified -- 20220114 10:53:44 AM
+-------------------------------------------------------
+Log Entry : 오전 10:55:04 2022년 1월 14일 금요일
+  Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'System.Collections.Generic.Dictionary`2[System.String,System.String]' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path '', line 1, position 1.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오전 11:07:53 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 11:07:53 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:09 2022년 1월 14일 금요일
+   Temp. Level 1(349231) has been added -- 20220114 11:08:09 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:09 2022년 1월 14일 금요일
+   Generic - 200mm(349232) has been added -- 20220114 11:08:09 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:09 2022년 1월 14일 금요일
+   Group 1(349243) has been added -- 20220114 11:08:09 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:09 2022년 1월 14일 금요일
+   Group 1(349244) has been added -- 20220114 11:08:09 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:10 2022년 1월 14일 금요일
+  element(349231) has been deleted -- 20220114 11:08:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:10 2022년 1월 14일 금요일
+  element(349243) has been deleted -- 20220114 11:08:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:08:10 2022년 1월 14일 금요일
+  element(349244) has been deleted -- 20220114 11:08:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:10:48 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 11:10:48 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:10 2022년 1월 14일 금요일
+   Temp. Level 1(349231) has been added -- 20220114 11:11:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:10 2022년 1월 14일 금요일
+   Generic - 200mm(349232) has been added -- 20220114 11:11:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:10 2022년 1월 14일 금요일
+   Group 1(349247) has been added -- 20220114 11:11:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:10 2022년 1월 14일 금요일
+   Group 1(349248) has been added -- 20220114 11:11:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:27 2022년 1월 14일 금요일
+  System.Data.SqlClient.SqlException (0x80131904): PRIMARY KEY 제약 조건 'PK__element__CA825B997CE94D9F'을(를) 위반했습니다. 개체 'dbo.element'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (349232, 1)입니다.
+문이 종료되었습니다.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.InsertElements(IEnumerable`1 elements)
+ClientConnectionId:25af7182-6a32-4e64-bc46-b0300fd1d5f4
+Error Number:2627,State:1,Class:14
+-------------------------------------------------------
+Log Entry : 오전 11:11:28 2022년 1월 14일 금요일
+  element(349231) has been deleted -- 20220114 11:11:28 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:28 2022년 1월 14일 금요일
+  element(349247) has been deleted -- 20220114 11:11:28 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:28 2022년 1월 14일 금요일
+  element(349248) has been deleted -- 20220114 11:11:28 AM
+-------------------------------------------------------
+Log Entry : 오전 11:11:31 2022년 1월 14일 금요일
+  System.ArgumentNullException: Value cannot be null.
+Parameter name: value
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오전 11:11:31 2022년 1월 14일 금요일
+  element(349232) has been modified -- 20220114 11:11:28 AM
+-------------------------------------------------------
+Log Entry : 오전 11:16:00 2022년 1월 14일 금요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220114 11:15:58 AM
+-------------------------------------------------------
+Log Entry : 오전 11:16:00 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 11:15:58 AM
+-------------------------------------------------------
+Log Entry : 오후 12:59:19 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 12:59:19 PM
+-------------------------------------------------------
+Log Entry : 오후 1:14:06 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 13:14:06 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:18 2022년 1월 14일 금요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220114 14:50:16 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:18 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 14:50:16 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:25 2022년 1월 14일 금요일
+   Temp. Level 1(349231) has been added -- 20220114 14:50:25 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:25 2022년 1월 14일 금요일
+   Generic - 200mm(349232) has been added -- 20220114 14:50:25 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:25 2022년 1월 14일 금요일
+   Group 1(349247) has been added -- 20220114 14:50:25 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:25 2022년 1월 14일 금요일
+   Group 1(349248) has been added -- 20220114 14:50:25 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:26 2022년 1월 14일 금요일
+  element(349231) has been deleted -- 20220114 14:50:26 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:26 2022년 1월 14일 금요일
+  element(349247) has been deleted -- 20220114 14:50:26 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:26 2022년 1월 14일 금요일
+  element(349248) has been deleted -- 20220114 14:50:26 PM
+-------------------------------------------------------
+Log Entry : 오후 2:50:33 2022년 1월 14일 금요일
+  element(349232) has been modified -- 20220114 14:50:26 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:10 2022년 1월 14일 금요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220114 14:52:08 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:10 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 14:52:08 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:17 2022년 1월 14일 금요일
+   Temp. Level 1(349231) has been added -- 20220114 14:52:17 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:17 2022년 1월 14일 금요일
+   Generic - 200mm(349232) has been added -- 20220114 14:52:17 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:17 2022년 1월 14일 금요일
+   Group 1(349243) has been added -- 20220114 14:52:17 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:17 2022년 1월 14일 금요일
+   Group 1(349244) has been added -- 20220114 14:52:17 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:18 2022년 1월 14일 금요일
+  element(349231) has been deleted -- 20220114 14:52:18 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:18 2022년 1월 14일 금요일
+  element(349243) has been deleted -- 20220114 14:52:18 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:18 2022년 1월 14일 금요일
+  element(349244) has been deleted -- 20220114 14:52:18 PM
+-------------------------------------------------------
+Log Entry : 오후 2:52:18 2022년 1월 14일 금요일
+  element(349232) has been modified -- 20220114 14:52:18 PM
+-------------------------------------------------------
+Log Entry : 오후 3:14:29 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:14:14 PM
+-------------------------------------------------------
+Log Entry : 오후 3:15:19 2022년 1월 14일 금요일
+  element(349175) has been modified -- 20220114 15:14:35 PM
+-------------------------------------------------------
+Log Entry : 오후 3:21:40 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:21:37 PM
+-------------------------------------------------------
+Log Entry : 오후 3:21:49 2022년 1월 14일 금요일
+  element(349175) has been modified -- 20220114 15:21:44 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:39 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:26:15 PM
+-------------------------------------------------------
+Log Entry : 오후 3:35:22 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:35:17 PM
+-------------------------------------------------------
+Log Entry : 오후 3:38:52 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:38:49 PM
+-------------------------------------------------------
+Log Entry : 오후 3:39:04 2022년 1월 14일 금요일
+  element(349175) has been modified -- 20220114 15:38:59 PM
+-------------------------------------------------------
+Log Entry : 오후 3:46:46 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:46:46 PM
+-------------------------------------------------------
+Log Entry : 오후 3:51:50 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 15:51:49 PM
+-------------------------------------------------------
+Log Entry : 오후 4:37:52 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 16:37:52 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:00 2022년 1월 14일 금요일
+   Temp. Level 1(349232) has been added -- 20220114 16:38:00 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:00 2022년 1월 14일 금요일
+   Generic - 200mm(349233) has been added -- 20220114 16:38:00 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:00 2022년 1월 14일 금요일
+   Group 1(349248) has been added -- 20220114 16:38:00 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:00 2022년 1월 14일 금요일
+   Group 1(349249) has been added -- 20220114 16:38:00 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:04 2022년 1월 14일 금요일
+  System.Data.SqlClient.SqlException (0x80131904): PRIMARY KEY 제약 조건 'PK__element__CA825B99F0BA1F1C'을(를) 위반했습니다. 개체 'dbo.element'에 중복 키를 삽입할 수 없습니다. 중복 키 값은 (349232, 1)입니다.
+문이 종료되었습니다.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.InsertElements(IEnumerable`1 elements)
+ClientConnectionId:40ac523e-02ec-447a-a1bf-3e18bc84e0e2
+Error Number:2627,State:1,Class:14
+-------------------------------------------------------
+Log Entry : 오후 4:38:19 2022년 1월 14일 금요일
+  element(349232) has been deleted -- 20220114 16:38:19 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:19 2022년 1월 14일 금요일
+  element(349248) has been deleted -- 20220114 16:38:19 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:19 2022년 1월 14일 금요일
+  element(349249) has been deleted -- 20220114 16:38:19 PM
+-------------------------------------------------------
+Log Entry : 오후 4:38:28 2022년 1월 14일 금요일
+  element(349233) has been modified -- 20220114 16:38:19 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:43 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 16:45:43 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:52 2022년 1월 14일 금요일
+   Temp. Level 1(349232) has been added -- 20220114 16:45:51 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:52 2022년 1월 14일 금요일
+   Generic - 200mm(349233) has been added -- 20220114 16:45:51 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:52 2022년 1월 14일 금요일
+   Group 1(349244) has been added -- 20220114 16:45:51 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:52 2022년 1월 14일 금요일
+   Group 1(349245) has been added -- 20220114 16:45:51 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:53 2022년 1월 14일 금요일
+  element(349232) has been deleted -- 20220114 16:45:53 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:53 2022년 1월 14일 금요일
+  element(349244) has been deleted -- 20220114 16:45:53 PM
+-------------------------------------------------------
+Log Entry : 오후 4:45:53 2022년 1월 14일 금요일
+  element(349245) has been deleted -- 20220114 16:45:53 PM
+-------------------------------------------------------
+Log Entry : 오후 4:57:01 2022년 1월 14일 금요일
+  System.InvalidCastException: Unable to cast object of type 'System.DBNull' to type 'System.String'.
+   at Haeahn.Performance.Revit.DAO.SelectAllElements(Project project)
+-------------------------------------------------------
+Log Entry : 오후 4:57:44 2022년 1월 14일 금요일
+  System.ArgumentNullException: Value cannot be null.
+Parameter name: source
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Haeahn.Performance.Revit.ExternalApplication.OnDocumentOpened(Object sender, DocumentOpenedEventArgs args)
+-------------------------------------------------------
+Log Entry : 오후 5:02:28 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 17:02:10 PM
+-------------------------------------------------------
+Log Entry : 오후 5:08:07 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 17:07:59 PM
+-------------------------------------------------------
+Log Entry : 오후 5:31:42 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 17:31:34 PM
+-------------------------------------------------------
+Log Entry : 오후 5:35:16 2022년 1월 14일 금요일
+  Project Project Name(0001) has been opened by sj.min -- 20220114 17:35:11 PM
+-------------------------------------------------------

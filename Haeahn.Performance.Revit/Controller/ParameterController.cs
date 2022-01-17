@@ -9,11 +9,15 @@ namespace Haeahn.Performance.Revit
 {
     class ParameterController
     {
-        internal Dictionary<string, string> GetParameters(Autodesk.Revit.DB.Element element)
+        internal Dictionary<string, string> GetElementParameters(Autodesk.Revit.DB.Element element, bool isType)
         {
             Dictionary<string, string> parameters = new Dictionary<string, string>();
 
-            foreach (Parameter parameter in element.GetOrderedParameters())
+            ElementType type = ExternalApplication.rvt_doc.GetElement(element.GetTypeId()) as ElementType;
+
+            var orderedParameters = (isType && type != null) ? type.GetOrderedParameters() : element.GetOrderedParameters();
+
+            foreach (Parameter parameter in orderedParameters)
             {
                 var key = parameter.Definition.Name;
                 var value = parameter.AsValueString();

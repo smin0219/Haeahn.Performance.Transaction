@@ -15,17 +15,14 @@ namespace Haeahn.Performance.Revit
         {
             return string.Join(", ", points.Select<XYZ, string>(p => PointToString(p)));
         }
-
         public string PointToString(XYZ point)
         {
-            return string.Format("{0},{1},{2}", point.X.ToString(), point.Y.ToString(), point.Z.ToString());
+            return string.Format("[{0},{1},{2}]", point.X.ToString(), point.Y.ToString(), point.Z.ToString());
         }
-
         public string CurveTessellateToString(Autodesk.Revit.DB.Curve curve)
         {
             return PointArrayToString(curve.Tessellate());
         }
-
         public string LocationToString(Location location)
         {
             LocationPoint locationPoint = location as LocationPoint;
@@ -34,21 +31,13 @@ namespace Haeahn.Performance.Revit
             return (locationPoint == null ? ((locationCurve == null) ? null : CurveTessellateToString(locationCurve.Curve)) : PointToString(locationPoint.Point));
         }
 
-        public string BuildJson(BoundingBoxXYZ boundingBox)
+        public Dictionary<string, string> GetBoundingBoxMaxMin(BoundingBoxXYZ boundingBox)
         {
-            try
-            {
-                return "{" + string.Format("\"Max\": \"{0}\", \"Min\": \"{1}\"", PointToString(boundingBox.Max), PointToString(boundingBox.Min)) + "}";
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
+            Dictionary< string, string > boundingBoxMaxMinPoint = new Dictionary<string, string>();
+            boundingBoxMaxMinPoint.Add("Max", this.PointToString(boundingBox.Max));
+            boundingBoxMaxMinPoint.Add("Min", this.PointToString(boundingBox.Min));
 
-        public Dictionary<string, string> GetBoundingBoxPoint(BoundingBoxXYZ boundingBox)
-        {
-            return new Dictionary<string, string> { { "Max", this.PointToString(boundingBox.Max) }, { "Min", this.PointToString(boundingBox.Min) } };
+            return boundingBoxMaxMinPoint;
         }
         public List<XYZ> GetCanonicVerticies(Autodesk.Revit.DB.Element rvt_element)
         {
@@ -94,48 +83,30 @@ namespace Haeahn.Performance.Revit
             }
             return d;
         }
-        public string BuildJson(IList<Parameter> parameters)
-        {
-            List<string> properties = new List<string>();
-            foreach (Parameter param in parameters)
-            {
-                properties.Add(string.Format("\"{0}\":\"{1}\"", param.Definition.Name, param.AsValueString()));
-            }
-            properties.Sort();
-            return "{" + string.Join(",", properties) + "}";
-        }
         public void AddVertices(Dictionary<Autodesk.Revit.DB.XYZ, int> vertexLookup, Autodesk.Revit.DB.Transform t, Autodesk.Revit.DB.Solid s)
         {
             try
             {
-                //  Debug.Assert(0 < s.Edges.Size,
-                //"expected a non-empty solid");
-
-                if (!(s.Edges.Size > 0))
+                foreach (Autodesk.Revit.DB.Face f in s.Faces)
                 {
-                    foreach (Autodesk.Revit.DB.Face f in s.Faces)
-                    {
-                        Mesh m = f.Triangulate();
+                    Mesh m = f.Triangulate();
 
-                        if (m != null)
+                    if (m != null)
+                    {
+                        foreach (XYZ p in m.Vertices)
                         {
-                            foreach (XYZ p in m.Vertices)
+                            XYZ q = t.OfPoint(p);
+                            if (!vertexLookup.ContainsKey(q))
                             {
-                                XYZ q = t.OfPoint(p);
-                                if (!vertexLookup.ContainsKey(q))
-                                {
-                                    vertexLookup.Add(q, 1);
-                                }
-                                else
-                                {
-                                    ++vertexLookup[q];
-                                }
+                                vertexLookup.Add(q, 1);
+                            }
+                            else
+                            {
+                                ++vertexLookup[q];
                             }
                         }
                     }
                 }
-
-
             }
             catch (Exception ex)
             {

@@ -1,0 +1,307 @@
+Log Entry : 오전 10:55:21 2022년 1월 12일 수요일
+  System.Data.SqlClient.SqlException (0x80131904): 테이블 'element'에 있는 ID 열의 명시적 값은 열 목록이 사용되고 IDENTITY_INSERT가 ON일 때만 지정할 수 있습니다.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.InsertElements(IEnumerable`1 elements)
+ClientConnectionId:003b4340-4357-444c-be49-f4a52517776d
+Error Number:8101,State:1,Class:16
+-------------------------------------------------------
+Log Entry : 오전 10:55:32 2022년 1월 12일 수요일
+  All elements of the project() have been inserted into Performance DB -- 20220112 10:55:17 AM
+-------------------------------------------------------
+Log Entry : 오전 10:55:32 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 10:55:17 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:23 2022년 1월 12일 수요일
+  All elements of the project() have been inserted into Performance DB -- 20220112 11:26:03 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:23 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 11:26:03 AM
+-------------------------------------------------------
+Log Entry : 오전 11:27:06 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 11:26:58 AM
+-------------------------------------------------------
+Log Entry : 오전 11:27:10 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 11:26:58 AM
+-------------------------------------------------------
+Log Entry : 오전 11:27:12 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 11:26:58 AM
+-------------------------------------------------------
+Log Entry : 오전 11:27:12 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 11:26:58 AM
+-------------------------------------------------------
+Log Entry : 오전 11:27:13 2022년 1월 12일 수요일
+  System.Data.SqlClient.SqlException (0x80131904): 키워드 'transaction' 근처의 구문이 잘못되었습니다.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.InsertTransactions(IEnumerable`1 transactions)
+ClientConnectionId:98615f16-f9db-4c09-951a-79d6b6fa3f9c
+Error Number:156,State:1,Class:15
+-------------------------------------------------------
+Log Entry : 오전 11:29:44 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 11:29:44 AM
+-------------------------------------------------------
+Log Entry : 오전 11:29:51 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 11:29:51 AM
+-------------------------------------------------------
+Log Entry : 오전 11:29:51 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 11:29:51 AM
+-------------------------------------------------------
+Log Entry : 오전 11:29:51 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 11:29:51 AM
+-------------------------------------------------------
+Log Entry : 오전 11:29:51 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 11:29:51 AM
+-------------------------------------------------------
+Log Entry : 오전 11:34:00 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 11:34:00 AM
+-------------------------------------------------------
+Log Entry : 오전 11:36:16 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 11:36:16 AM
+-------------------------------------------------------
+Log Entry : 오전 11:36:17 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 11:36:16 AM
+-------------------------------------------------------
+Log Entry : 오전 11:36:17 2022년 1월 12일 수요일
+  element(349248) has been added -- 20220112 11:36:16 AM
+-------------------------------------------------------
+Log Entry : 오전 11:36:17 2022년 1월 12일 수요일
+  element(349249) has been added -- 20220112 11:36:16 AM
+-------------------------------------------------------
+Log Entry : 오후 1:20:14 2022년 1월 12일 수요일
+  All elements of the project() have been inserted into Performance DB -- 20220112 13:20:11 PM
+-------------------------------------------------------
+Log Entry : 오후 1:20:14 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 13:20:11 PM
+-------------------------------------------------------
+Log Entry : 오후 1:20:24 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 13:20:24 PM
+-------------------------------------------------------
+Log Entry : 오후 1:20:24 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 13:20:24 PM
+-------------------------------------------------------
+Log Entry : 오후 1:20:24 2022년 1월 12일 수요일
+  element(349248) has been added -- 20220112 13:20:24 PM
+-------------------------------------------------------
+Log Entry : 오후 1:20:24 2022년 1월 12일 수요일
+  element(349249) has been added -- 20220112 13:20:24 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:33 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 13:23:29 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:33 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 13:23:29 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:29:04 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 13:29:02 PM
+-------------------------------------------------------
+Log Entry : 오후 1:29:04 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 13:29:02 PM
+-------------------------------------------------------
+Log Entry : 오후 1:29:11 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 13:29:11 PM
+-------------------------------------------------------
+Log Entry : 오후 1:29:11 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 13:29:11 PM
+-------------------------------------------------------
+Log Entry : 오후 1:29:12 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 13:29:11 PM
+-------------------------------------------------------
+Log Entry : 오후 1:29:12 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 13:29:11 PM
+-------------------------------------------------------
+Log Entry : 오후 1:39:31 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 13:39:29 PM
+-------------------------------------------------------
+Log Entry : 오후 1:39:31 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 13:39:29 PM
+-------------------------------------------------------
+Log Entry : 오후 1:39:37 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 13:39:37 PM
+-------------------------------------------------------
+Log Entry : 오후 1:39:37 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 13:39:37 PM
+-------------------------------------------------------
+Log Entry : 오후 1:39:37 2022년 1월 12일 수요일
+  element(349248) has been added -- 20220112 13:39:37 PM
+-------------------------------------------------------
+Log Entry : 오후 1:39:37 2022년 1월 12일 수요일
+  element(349249) has been added -- 20220112 13:39:37 PM
+-------------------------------------------------------
+Log Entry : 오후 1:42:29 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 13:42:29 PM
+-------------------------------------------------------
+Log Entry : 오후 1:42:38 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 13:42:38 PM
+-------------------------------------------------------
+Log Entry : 오후 1:42:38 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 13:42:38 PM
+-------------------------------------------------------
+Log Entry : 오후 1:42:38 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 13:42:38 PM
+-------------------------------------------------------
+Log Entry : 오후 1:42:38 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 13:42:38 PM
+-------------------------------------------------------
+Log Entry : 오후 2:01:15 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 14:01:15 PM
+-------------------------------------------------------
+Log Entry : 오후 2:10:56 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 14:10:53 PM
+-------------------------------------------------------
+Log Entry : 오후 2:10:56 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 14:10:53 PM
+-------------------------------------------------------
+Log Entry : 오후 2:11:10 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 14:11:10 PM
+-------------------------------------------------------
+Log Entry : 오후 2:11:10 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 14:11:10 PM
+-------------------------------------------------------
+Log Entry : 오후 2:11:10 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 14:11:10 PM
+-------------------------------------------------------
+Log Entry : 오후 2:11:10 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 14:11:10 PM
+-------------------------------------------------------
+Log Entry : 오후 5:02:55 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 17:02:51 PM
+-------------------------------------------------------
+Log Entry : 오후 5:02:55 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 17:02:51 PM
+-------------------------------------------------------
+Log Entry : 오후 5:03:09 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 17:03:09 PM
+-------------------------------------------------------
+Log Entry : 오후 5:03:09 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 17:03:09 PM
+-------------------------------------------------------
+Log Entry : 오후 5:03:09 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 17:03:09 PM
+-------------------------------------------------------
+Log Entry : 오후 5:03:09 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 17:03:09 PM
+-------------------------------------------------------
+Log Entry : 오후 5:10:53 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 17:10:53 PM
+-------------------------------------------------------
+Log Entry : 오후 5:14:56 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 17:14:53 PM
+-------------------------------------------------------
+Log Entry : 오후 5:14:56 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 17:14:53 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:05 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 17:15:05 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:05 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 17:15:05 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:05 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 17:15:05 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:05 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 17:15:05 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:35 2022년 1월 12일 수요일
+  element(349232) has been deleted -- 20220112 17:15:13 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:38 2022년 1월 12일 수요일
+  element(349244) has been deleted -- 20220112 17:15:13 PM
+-------------------------------------------------------
+Log Entry : 오후 5:15:41 2022년 1월 12일 수요일
+  element(349245) has been deleted -- 20220112 17:15:13 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:30 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 17:18:28 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:30 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 17:18:28 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:37 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 17:18:37 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:37 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 17:18:37 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:37 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 17:18:37 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:37 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 17:18:37 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:50 2022년 1월 12일 수요일
+  element(349232) has been deleted -- 20220112 17:18:45 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:54 2022년 1월 12일 수요일
+  element(349244) has been deleted -- 20220112 17:18:45 PM
+-------------------------------------------------------
+Log Entry : 오후 5:18:54 2022년 1월 12일 수요일
+  element(349245) has been deleted -- 20220112 17:18:45 PM
+-------------------------------------------------------
+Log Entry : 오후 5:20:56 2022년 1월 12일 수요일
+  System.Data.SqlClient.SqlException (0x80131904): DELETE 문이 REFERENCE 제약 조건 "FK__transaction_log__6D0D32F4"과(와) 충돌했습니다. 데이터베이스 "Performance", 테이블 "dbo.transaction_log"에서 충돌이 발생했습니다.
+문이 종료되었습니다.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.DeleteElements(IEnumerable`1 elementIds)
+ClientConnectionId:4a39ea97-5a0e-45cd-a4de-71a6b0dc672a
+Error Number:547,State:0,Class:16
+-------------------------------------------------------
+Log Entry : 오후 5:22:01 2022년 1월 12일 수요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220112 17:21:59 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:01 2022년 1월 12일 수요일
+  Project Project Name(0001) has been opened by sj.min -- 20220112 17:21:59 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:09 2022년 1월 12일 수요일
+  element(349232) has been added -- 20220112 17:22:08 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:09 2022년 1월 12일 수요일
+  element(349233) has been added -- 20220112 17:22:08 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:09 2022년 1월 12일 수요일
+  element(349244) has been added -- 20220112 17:22:08 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:09 2022년 1월 12일 수요일
+  element(349245) has been added -- 20220112 17:22:08 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:10 2022년 1월 12일 수요일
+  element(349232) has been deleted -- 20220112 17:22:10 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:10 2022년 1월 12일 수요일
+  element(349244) has been deleted -- 20220112 17:22:10 PM
+-------------------------------------------------------
+Log Entry : 오후 5:22:10 2022년 1월 12일 수요일
+  element(349245) has been deleted -- 20220112 17:22:10 PM
+-------------------------------------------------------

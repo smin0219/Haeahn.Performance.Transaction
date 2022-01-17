@@ -1,4 +1,5 @@
 ﻿using Haeahn.Performance.Revit;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -25,18 +26,16 @@ namespace Haeahn.Performance.Revit
         internal void InsertProject(Project project)
         {
             var currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
-            EmployeeController employeeController = new EmployeeController();
-            Employee employee = employeeController.CreateEmployee("20210916");
 
             try
             {
                 using (SqlConnection connection = new SqlConnection())
                 {
-                    SqlCommand command = new SqlCommand("INSERT INTO project VALUES (@code, @name, @created_user, @created_datetime)", connection);
+                    SqlCommand command = new SqlCommand("INSERT INTO project VALUES (@code, @name, @created_by, @created_on)", connection);
                     command.Parameters.Add("@code", SqlDbType.NVarChar).Value = (object)project.Code ?? DBNull.Value;
                     command.Parameters.Add("@name", SqlDbType.NVarChar).Value = (object)project.Name ?? DBNull.Value;
-                    command.Parameters.Add("@created_user", SqlDbType.NVarChar).Value = (object)employee.Name ?? DBNull.Value;
-                    command.Parameters.Add("@created_datetime", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
+                    command.Parameters.Add("@created_by", SqlDbType.NVarChar).Value = (object)ExternalApplication.employee.Name ?? DBNull.Value;
+                    command.Parameters.Add("@created_on", SqlDbType.NVarChar).Value = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
 
                     connection.ConnectionString = GetConnectionString();
                     connection.Open();
@@ -57,7 +56,7 @@ namespace Haeahn.Performance.Revit
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO element VALUES" +
                         "(@id, @name, @project_code, @project_name, @category_name, @category_type, @family_name, @type_name, " +
-                        "@location, @geometry, @verticies, @bounding_box, @instance_parameter, @type_parameter)", connection);
+                        "@location, @verticies, @bounding_box, @instance_parameter, @type_parameter)", connection);
 
                     command.Parameters.Add("@id", SqlDbType.NVarChar);
                     command.Parameters.Add("@name", SqlDbType.NVarChar);
@@ -68,7 +67,6 @@ namespace Haeahn.Performance.Revit
                     command.Parameters.Add("@family_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@type_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@location", SqlDbType.NVarChar);
-                    command.Parameters.Add("@geometry", SqlDbType.NVarChar);
                     command.Parameters.Add("@verticies", SqlDbType.NVarChar);
                     command.Parameters.Add("@bounding_box", SqlDbType.NVarChar);
                     command.Parameters.Add("@instance_parameter", SqlDbType.NVarChar);
@@ -88,11 +86,26 @@ namespace Haeahn.Performance.Revit
                         command.Parameters["@family_name"].Value = (object)element.FamilyName ?? DBNull.Value;
                         command.Parameters["@type_name"].Value = (object)element.TypeName ?? DBNull.Value;
                         command.Parameters["@location"].Value = (object)element.Location ?? DBNull.Value;
-                        command.Parameters["@geometry"].Value = (object)element.Geometry ?? DBNull.Value;
                         command.Parameters["@verticies"].Value = (object)element.Verticies ?? DBNull.Value;
                         command.Parameters["@bounding_box"].Value = (object)element.BoundingBox ?? DBNull.Value;
                         command.Parameters["@instance_parameter"].Value = (object)element.InstanceParameter ?? DBNull.Value;
                         command.Parameters["@type_parameter"].Value = (object)element.TypeParameter ?? DBNull.Value;
+
+                        if (element.BoundingBox != null)
+                        {
+                            command.Parameters["@bounding_box"].Value = JsonConvert.SerializeObject((object)element.BoundingBox).ToString();
+                        }
+
+                        if(element.InstanceParameter != null)
+                        {
+                            command.Parameters["@instance_parameter"].Value = JsonConvert.SerializeObject((object)element.InstanceParameter).ToString();
+                        }
+
+                        if(element.TypeParameter != null)
+                        {
+                            command.Parameters["@type_parameter"].Value = JsonConvert.SerializeObject((object)element.TypeParameter).ToString();
+                        }
+
                         command.ExecuteNonQuery();
                     }
                 }
@@ -110,13 +123,15 @@ namespace Haeahn.Performance.Revit
                 using (SqlConnection connection = new SqlConnection())
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO transaction_log VALUES" +
-                        "(@project_code, @element_id, @element_name, @category_type, @difference, @event_type, @event_datetime)", connection);
+                        "(@project_code, @element_id, @element_name, @category_type, @difference, @employee_id, @employee_name, @event_type, @event_datetime)", connection);
 
                     command.Parameters.Add("@project_code", SqlDbType.NVarChar);
                     command.Parameters.Add("@element_id", SqlDbType.NVarChar);
                     command.Parameters.Add("@element_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@category_type", SqlDbType.NVarChar);
                     command.Parameters.Add("@difference", SqlDbType.NVarChar);
+                    command.Parameters.Add("@employee_id", SqlDbType.NVarChar);
+                    command.Parameters.Add("@employee_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@event_type", SqlDbType.NVarChar);
                     command.Parameters.Add("@event_datetime", SqlDbType.NVarChar);
 
@@ -130,6 +145,8 @@ namespace Haeahn.Performance.Revit
                         command.Parameters["@element_name"].Value = (object)transaction.ElementName?? DBNull.Value;
                         command.Parameters["@category_type"].Value = (object)transaction.CategoryType ?? DBNull.Value;
                         command.Parameters["@difference"].Value = (object)transaction.Difference ?? DBNull.Value;
+                        command.Parameters["@employee_id"].Value = (object)transaction.EmployeeId ?? DBNull.Value;
+                        command.Parameters["@employee_name"].Value = (object)transaction.EmployeeName ?? DBNull.Value;
                         command.Parameters["@event_type"].Value = (object)transaction.EventType ?? DBNull.Value;
                         command.Parameters["@event_datetime"].Value = (object)transaction.EventDateTime ?? DBNull.Value;
 
@@ -150,13 +167,14 @@ namespace Haeahn.Performance.Revit
         #endregion
 
         #region SELECT
+        //프로젝트 코드가 있으면 프로젝트 코드를 반환하고, 없으면 null을 반환한다.
         internal string SelectProjectCode(Project project)
         {
             try
             { 
                 using(SqlConnection connection = new SqlConnection())
                 {
-                    SqlCommand command = new SqlCommand("SELECT * FROM project WHERE code = @code", connection);
+                    SqlCommand command = new SqlCommand("SELECT code FROM project WHERE code = @code", connection);
                     command.Parameters.Add("@code", SqlDbType.NVarChar).Value = (object)project.Code ?? DBNull.Value;
                     
                     connection.ConnectionString = GetConnectionString();
@@ -179,6 +197,7 @@ namespace Haeahn.Performance.Revit
                 return null;
             }
         }
+        //프로젝트내에 존재하는 모든 객체를 반환한다.
         internal IEnumerable<Element> SelectAllElements(Project project)
         {
             try
@@ -206,15 +225,45 @@ namespace Haeahn.Performance.Revit
                         element.FamilyName = reader["family_name"].ToString();
                         element.TypeName = reader["type_name"].ToString();
                         element.Location = reader["location"].ToString();
-                        element.Geometry = reader["geometry"].ToString();
+                        //element.Geometry = reader["geometry"].ToString();
                         element.Verticies = reader["verticies"].ToString();
-                        element.BoundingBox = reader["bounding_box"].ToString();
-                        element.InstanceParameter = reader["instance_parameter"].ToString();
-                        element.TypeParameter = reader["type_parameter"].ToString();
+                        element.BoundingBox = (reader["bounding_box"] != DBNull.Value) ? JsonConvert.DeserializeObject<Dictionary<string, string>>((string)reader["bounding_box"]) : null;
+                        element.InstanceParameter = (reader["instance_parameter"] != DBNull.Value) ? JsonConvert.DeserializeObject<Dictionary<string, string>>((string)reader["instance_parameter"]) : null;
+                        element.TypeParameter = (reader["type_parameter"] != DBNull.Value) ? JsonConvert.DeserializeObject<Dictionary<string, string>>((string)reader["type_parameter"]) : null;
                         elements.Add(element);
                     }
 
                     return elements;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.ToString());
+                Log.WriteToFile(ex.ToString());
+                return null;
+            }
+        }
+        internal string SelectElement(Element element)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection())
+                {
+                    SqlCommand command = new SqlCommand("SELECT TOP 1 id FROM element WHERE id = @id AND project_code = @project_code", connection);
+                    command.Parameters.Add("@id", SqlDbType.NVarChar).Value = (object)element.Id ?? DBNull.Value;
+                    command.Parameters.Add("@project_code", SqlDbType.NVarChar).Value = (object)element.ProjectCode ?? DBNull.Value;
+
+                    connection.ConnectionString = GetConnectionString();
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+                    string projectCode = null;
+
+                    while (reader.Read())
+                    {
+                        projectCode = reader["id"].ToString();
+                    }
+                    return projectCode;
                 }
             }
             catch (Exception ex)
@@ -266,7 +315,6 @@ namespace Haeahn.Performance.Revit
                 {
                     SqlCommand command = new SqlCommand("UPDATE element SET " +
                                                         "location = @location, " +
-                                                        "geometry = @geometry, " +
                                                         "verticies = @verticies," +
                                                         "bounding_box = @bounding_box, " +
                                                         "instance_parameter = @instance_parameter," +
@@ -274,24 +322,36 @@ namespace Haeahn.Performance.Revit
                                                         "WHERE id = @element_id AND project_code = @project_code" , connection);
 
                     command.Parameters.Add("@location", SqlDbType.NVarChar);
-                    command.Parameters.Add("@geometry", SqlDbType.NVarChar);
+                    //command.Parameters.Add("@geometry", SqlDbType.NVarChar);
                     command.Parameters.Add("@verticies", SqlDbType.NVarChar);
+                    command.Parameters.Add("@element_id", SqlDbType.NVarChar);
+                    command.Parameters.Add("@project_code", SqlDbType.NVarChar);
                     command.Parameters.Add("@bounding_box", SqlDbType.NVarChar);
                     command.Parameters.Add("@instance_parameter", SqlDbType.NVarChar);
                     command.Parameters.Add("@type_parameter", SqlDbType.NVarChar);
-                    command.Parameters.Add("@element_id", SqlDbType.NVarChar);
-                    command.Parameters.Add("@project_code", SqlDbType.NVarChar);
 
                     foreach (var element in elements)
                     {
                         command.Parameters["@location"].Value = (object)element.Location ?? DBNull.Value;
-                        command.Parameters["@geometry"].Value = (object)element.Geometry ?? DBNull.Value;
+                        //command.Parameters["@geometry"].Value = (object)element.Geometry ?? DBNull.Value;
                         command.Parameters["@verticies"].Value = (object)element.Verticies ?? DBNull.Value;
-                        command.Parameters["@bounding_box"].Value = (object)element.BoundingBox ?? DBNull.Value;
-                        command.Parameters["@instance_parameter"].Value = (object)element.InstanceParameter ?? DBNull.Value;
-                        command.Parameters["@type_parameter"].Value = (object)element.TypeParameter ?? DBNull.Value;
                         command.Parameters["@element_id"].Value = (object)element.Id ?? DBNull.Value;
                         command.Parameters["@project_code"].Value = (object)ExternalApplication.projectCode ?? DBNull.Value;
+
+                        if (element.BoundingBox != null)
+                        {
+                            command.Parameters["@bounding_box"].Value = JsonConvert.SerializeObject((object)element.BoundingBox).ToString();
+                        }
+
+                        if (element.InstanceParameter != null)
+                        {
+                            command.Parameters["@instance_parameter"].Value = JsonConvert.SerializeObject((object)element.InstanceParameter).ToString();
+                        }
+
+                        if (element.TypeParameter != null)
+                        {
+                            command.Parameters["@type_parameter"].Value = JsonConvert.SerializeObject((object)element.TypeParameter).ToString();
+                        }
                     }
 
                     connection.ConnectionString = GetConnectionString();

@@ -1,0 +1,20 @@
+Log Entry : 오후 12:19:55 2022년 1월 7일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.JsonController.TypeConversion(GeometryElement geometryElement)
+   at Haeahn.Performance.Revit.ElementController.TypeConversion(Element rvt_element)
+-------------------------------------------------------
+Log Entry : 오후 12:19:57 2022년 1월 7일 금요일
+  System.NullReferenceException: Object reference not set to an instance of an object.
+   at Haeahn.Performance.Revit.JsonController.TypeConversion(GeometryElement geometryElement)
+   at Haeahn.Performance.Revit.ElementController.TypeConversion(Element rvt_element)
+-------------------------------------------------------
+Log Entry : 오후 2:46:10 2022년 1월 7일 금요일
+  System.InvalidOperationException: ExecuteNonQuery: Connection property has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.Insert(IEnumerable`1 elements)
+-------------------------------------------------------
+Log Entry : 오후 2:46:12 2022년 1월 7일 금요일
+  Project Name(0001) has been opened by sj.min -- 20220107 14:45:51 PM
+-------------------------------------------------------

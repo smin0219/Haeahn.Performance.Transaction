@@ -1,0 +1,20 @@
+Log Entry : 오후 5:02:33 2022년 1월 10일 월요일
+  System.InvalidOperationException: ExecuteNonQuery: Connection property has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.Insert(IEnumerable`1 elements)
+-------------------------------------------------------
+Log Entry : 오후 5:02:33 2022년 1월 10일 월요일
+  Project Name(0001) has been opened by sj.min -- 20220110 17:01:48 PM
+-------------------------------------------------------
+Log Entry : 오후 5:03:43 2022년 1월 10일 월요일
+  System.InvalidOperationException: ExecuteNonQuery: Connection property has not been initialized.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.Insert(IEnumerable`1 elements)
+-------------------------------------------------------
+Log Entry : 오후 5:03:43 2022년 1월 10일 월요일
+  Project Name(0001) has been opened by sj.min -- 20220110 17:03:28 PM
+-------------------------------------------------------

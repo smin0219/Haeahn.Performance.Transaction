@@ -35,64 +35,7 @@ namespace Haeahn.Performance.Revit
                 return null;
             }
         }
-        //레벳의 객체를 필요한 정보만 따로 정리한 Element로 만들어서 반환한다.
-        internal Element ConvertRevitElementToElement(Autodesk.Revit.DB.Element rvt_element)
-        {
-            try
-            {
-                var rvt_doc = ExternalApplication.rvt_doc;
-                var projectInformation = rvt_doc.ProjectInformation;
-
-                Element element = new Element();
-
-                element.Id = rvt_element.Id.ToString();
-                element.Name = rvt_element.Name;
-                element.ProjectName = (projectInformation == null) ? null : projectInformation.Name;
-                element.ProjectCode = (projectInformation == null) ? null : projectInformation.Number.ToString();
-                element.CategoryName = (rvt_element.Category == null) ? string.Empty : rvt_element.Category.Name;
-                element.CategoryType = (rvt_element.Category == null) ? string.Empty : rvt_element.Category.CategoryType.ToString();
-
-                Utilities utils = new Utilities();
-
-                element.Location = utils.LocationToString(rvt_element.Location);
-
-                Options options = new Options();
-                GeometryController geometryController = new GeometryController();
-
-                GeometryElement geometryElement = rvt_element.get_Geometry(options);
-
-                if(geometryElement != null)
-                {
-                    Curve curve = null;
-                    Solid solid = null;
-
-                    geometryController.AddCurvesAndSolids(geometryElement, ref curve, ref solid);
-                    
-                    if(curve != null)
-                    {
-                        element.Geometry = JsonConvert.SerializeObject(curve);
-                    }
-                    if(solid != null)
-                    {
-                        element.Geometry = JsonConvert.SerializeObject(solid);
-                    }
-                }
-
-                ElementType elementType = rvt_doc.GetElement(rvt_element.GetTypeId()) as ElementType;
-                BoundingBoxXYZ boundingBox = rvt_element.get_BoundingBox(null);
-
-                ParameterController parameterController = new ParameterController();
-                element.InstanceParameter = JsonConvert.SerializeObject(parameterController.GetParameters(rvt_element));
-
-                return element;
-            }
-            catch (Exception ex)
-            {
-                Debug.Assert(false, ex.ToString());
-                Log.WriteToFile(ex.ToString());
-                return null;
-            }
-        }
+        
         internal string GetCategoryType(Autodesk.Revit.DB.Element element)
         {
             return element.Category.CategoryType.ToString();

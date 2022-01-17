@@ -1,0 +1,645 @@
+Log Entry : 오전 8:47:29 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 08:47:28 AM
+-------------------------------------------------------
+Log Entry : 오전 8:48:42 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 08:48:42 AM
+-------------------------------------------------------
+Log Entry : 오전 8:48:42 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 08:48:42 AM
+-------------------------------------------------------
+Log Entry : 오전 8:48:42 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 08:48:42 AM
+-------------------------------------------------------
+Log Entry : 오전 8:48:42 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 08:48:42 AM
+-------------------------------------------------------
+Log Entry : 오전 8:50:30 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 08:50:30 AM
+-------------------------------------------------------
+Log Entry : 오전 8:50:39 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 08:50:39 AM
+-------------------------------------------------------
+Log Entry : 오전 8:50:39 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 08:50:39 AM
+-------------------------------------------------------
+Log Entry : 오전 8:50:39 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 08:50:39 AM
+-------------------------------------------------------
+Log Entry : 오전 8:50:39 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 08:50:39 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:24 2022년 1월 17일 월요일
+  System.InvalidCastException: Failed to convert parameter value from a Dictionary`2 to a String. ---> System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.BuildParamList(TdsParser parser, SqlParameterCollection parameters, Boolean includeReturnValue)
+   at System.Data.SqlClient.SqlCommand.BuildExecuteSql(CommandBehavior behavior, String commandText, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.InsertElements(IEnumerable`1 elements)
+-------------------------------------------------------
+Log Entry : 오전 8:51:25 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 08:51:25 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:25 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 08:51:25 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:25 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 08:51:25 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:27 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 08:51:25 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:30 2022년 1월 17일 월요일
+  System.InvalidCastException: Failed to convert parameter value from a Dictionary`2 to a String. ---> System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.BuildParamList(TdsParser parser, SqlParameterCollection parameters, Boolean includeReturnValue)
+   at System.Data.SqlClient.SqlCommand.BuildExecuteSql(CommandBehavior behavior, String commandText, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.UpdateElements(IEnumerable`1 elements)
+-------------------------------------------------------
+Log Entry : 오전 8:51:34 2022년 1월 17일 월요일
+   Temp. Level 1(349257) has been added -- 20220117 08:51:34 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:34 2022년 1월 17일 월요일
+   Generic - 200mm(349258) has been added -- 20220117 08:51:34 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:34 2022년 1월 17일 월요일
+   Group 1(349273) has been added -- 20220117 08:51:34 AM
+-------------------------------------------------------
+Log Entry : 오전 8:51:34 2022년 1월 17일 월요일
+   Group 1(349274) has been added -- 20220117 08:51:34 AM
+-------------------------------------------------------
+Log Entry : 오전 8:59:34 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 08:59:34 AM
+-------------------------------------------------------
+Log Entry : 오전 8:59:40 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 08:59:40 AM
+-------------------------------------------------------
+Log Entry : 오전 8:59:40 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 08:59:40 AM
+-------------------------------------------------------
+Log Entry : 오전 8:59:40 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 08:59:40 AM
+-------------------------------------------------------
+Log Entry : 오전 8:59:40 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 08:59:40 AM
+-------------------------------------------------------
+Log Entry : 오전 9:28:25 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 09:28:16 AM
+-------------------------------------------------------
+Log Entry : 오전 9:28:32 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 09:28:32 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:13 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 09:32:10 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:21 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 09:35:21 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:21 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 09:35:21 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:21 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 09:35:21 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:21 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 09:35:21 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:36 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 09:35:36 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:36 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 09:35:36 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:36 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 09:35:36 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:38 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 09:35:36 AM
+-------------------------------------------------------
+Log Entry : 오전 9:35:38 2022년 1월 17일 월요일
+  System.InvalidCastException: Failed to convert parameter value from a Dictionary`2 to a String. ---> System.InvalidCastException: Object must implement IConvertible.
+   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   --- End of inner exception stack trace ---
+   at System.Data.SqlClient.SqlParameter.CoerceValue(Object value, MetaType destinationType, Boolean& coercedToDataFeed, Boolean& typeChanged, Boolean allowStreaming)
+   at System.Data.SqlClient.SqlParameter.GetCoercedValue()
+   at System.Data.SqlClient.SqlParameter.Validate(Int32 index, Boolean isCommandProc)
+   at System.Data.SqlClient.SqlCommand.BuildParamList(TdsParser parser, SqlParameterCollection parameters, Boolean includeReturnValue)
+   at System.Data.SqlClient.SqlCommand.BuildExecuteSql(CommandBehavior behavior, String commandText, SqlParameterCollection parameters, _SqlRPC& rpc)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Haeahn.Performance.Revit.DAO.UpdateElements(IEnumerable`1 elements)
+-------------------------------------------------------
+Log Entry : 오전 9:36:47 2022년 1월 17일 월요일
+   Temp. Level 1(349266) has been added -- 20220117 09:36:47 AM
+-------------------------------------------------------
+Log Entry : 오전 9:36:47 2022년 1월 17일 월요일
+   Generic - 200mm(349267) has been added -- 20220117 09:36:47 AM
+-------------------------------------------------------
+Log Entry : 오전 9:36:47 2022년 1월 17일 월요일
+   Group 1(349282) has been added -- 20220117 09:36:47 AM
+-------------------------------------------------------
+Log Entry : 오전 9:36:47 2022년 1월 17일 월요일
+   Group 1(349283) has been added -- 20220117 09:36:47 AM
+-------------------------------------------------------
+Log Entry : 오전 9:36:51 2022년 1월 17일 월요일
+  element(349266) has been deleted -- 20220117 09:36:51 AM
+-------------------------------------------------------
+Log Entry : 오전 9:36:51 2022년 1월 17일 월요일
+  element(349282) has been deleted -- 20220117 09:36:51 AM
+-------------------------------------------------------
+Log Entry : 오전 9:36:51 2022년 1월 17일 월요일
+  element(349283) has been deleted -- 20220117 09:36:51 AM
+-------------------------------------------------------
+Log Entry : 오전 9:55:49 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 09:55:23 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:01 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 09:55:23 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:08 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 09:57:08 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:08 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 09:57:08 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:08 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 09:57:08 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:08 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 09:57:08 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:09 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 09:57:09 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:09 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 09:57:09 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:09 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 09:57:09 AM
+-------------------------------------------------------
+Log Entry : 오전 9:57:16 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 09:57:09 AM
+-------------------------------------------------------
+Log Entry : 오전 10:00:15 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 10:00:14 AM
+-------------------------------------------------------
+Log Entry : 오전 10:00:23 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 10:00:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:00:23 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 10:00:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:00:23 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 10:00:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:00:23 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 10:00:23 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:46 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 10:43:37 AM
+-------------------------------------------------------
+Log Entry : 오전 10:43:46 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 10:43:37 AM
+-------------------------------------------------------
+Log Entry : 오전 10:54:54 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 10:54:37 AM
+-------------------------------------------------------
+Log Entry : 오전 10:54:54 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 10:54:37 AM
+-------------------------------------------------------
+Log Entry : 오전 11:03:34 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 11:03:07 AM
+-------------------------------------------------------
+Log Entry : 오전 11:03:34 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 11:03:07 AM
+-------------------------------------------------------
+Log Entry : 오전 11:18:12 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 11:18:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:18:12 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 11:18:10 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:17 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 11:26:16 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:17 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 11:26:16 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:25 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 11:26:25 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:25 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 11:26:25 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:25 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 11:26:25 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:25 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 11:26:25 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:26 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 11:26:26 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:26 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 11:26:26 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:26 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 11:26:26 AM
+-------------------------------------------------------
+Log Entry : 오전 11:26:26 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 11:26:26 AM
+-------------------------------------------------------
+Log Entry : 오후 1:11:45 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 13:11:43 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:45 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:11:43 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:52 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:11:52 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:52 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:11:52 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:52 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:11:52 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:52 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:11:52 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:53 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:11:53 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:54 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:11:53 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:54 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:11:53 PM
+-------------------------------------------------------
+Log Entry : 오후 1:11:54 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 13:11:53 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:36 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:23:35 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:44 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:23:44 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:44 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:23:44 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:44 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:23:44 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:44 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:23:44 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:23:46 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:08 2022년 1월 17일 월요일
+  System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.FormatError()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오후 1:24:08 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 13:23:46 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:15 2022년 1월 17일 월요일
+   Temp. Level 1(349257) has been added -- 20220117 13:24:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:15 2022년 1월 17일 월요일
+   Generic - 200mm(349258) has been added -- 20220117 13:24:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:15 2022년 1월 17일 월요일
+   Group 1(349273) has been added -- 20220117 13:24:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:15 2022년 1월 17일 월요일
+   Group 1(349274) has been added -- 20220117 13:24:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:16 2022년 1월 17일 월요일
+  element(349257) has been deleted -- 20220117 13:24:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:16 2022년 1월 17일 월요일
+  element(349273) has been deleted -- 20220117 13:24:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:16 2022년 1월 17일 월요일
+  element(349274) has been deleted -- 20220117 13:24:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:28 2022년 1월 17일 월요일
+  System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.FormatError()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오후 1:24:28 2022년 1월 17일 월요일
+  element(349258) has been modified -- 20220117 13:24:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:33 2022년 1월 17일 월요일
+   Temp. Level 1(349294) has been added -- 20220117 13:24:33 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:33 2022년 1월 17일 월요일
+   Generic - 200mm(349295) has been added -- 20220117 13:24:33 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:33 2022년 1월 17일 월요일
+   Group 1(349312) has been added -- 20220117 13:24:33 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:33 2022년 1월 17일 월요일
+   Group 1(349313) has been added -- 20220117 13:24:33 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:34 2022년 1월 17일 월요일
+  element(349294) has been deleted -- 20220117 13:24:34 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:34 2022년 1월 17일 월요일
+  element(349312) has been deleted -- 20220117 13:24:34 PM
+-------------------------------------------------------
+Log Entry : 오후 1:24:34 2022년 1월 17일 월요일
+  element(349313) has been deleted -- 20220117 13:24:34 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:42 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:26:42 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:50 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:26:50 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:50 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:26:50 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:50 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:26:50 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:50 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:26:50 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:51 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:26:51 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:51 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:26:51 PM
+-------------------------------------------------------
+Log Entry : 오후 1:26:51 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:26:51 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:04 2022년 1월 17일 월요일
+  System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.FormatError()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Haeahn.Performance.Revit.Element.CompareTo(Element element)
+-------------------------------------------------------
+Log Entry : 오후 1:27:04 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 13:26:51 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:09 2022년 1월 17일 월요일
+   Temp. Level 1(349257) has been added -- 20220117 13:27:09 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:09 2022년 1월 17일 월요일
+   Generic - 200mm(349258) has been added -- 20220117 13:27:09 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:09 2022년 1월 17일 월요일
+   Group 1(349273) has been added -- 20220117 13:27:09 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:09 2022년 1월 17일 월요일
+   Group 1(349274) has been added -- 20220117 13:27:09 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:10 2022년 1월 17일 월요일
+  element(349257) has been deleted -- 20220117 13:27:10 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:10 2022년 1월 17일 월요일
+  element(349273) has been deleted -- 20220117 13:27:10 PM
+-------------------------------------------------------
+Log Entry : 오후 1:27:10 2022년 1월 17일 월요일
+  element(349274) has been deleted -- 20220117 13:27:10 PM
+-------------------------------------------------------
+Log Entry : 오후 1:30:39 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:30:39 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:07 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:31:07 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:07 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:31:07 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:07 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:31:07 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:07 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:31:07 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:08 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:31:08 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:08 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:31:08 PM
+-------------------------------------------------------
+Log Entry : 오후 1:31:08 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:31:08 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:50 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:40:50 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:56 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:40:56 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:57 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:40:56 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:57 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:40:56 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:57 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:40:56 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:58 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:40:58 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:58 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:40:58 PM
+-------------------------------------------------------
+Log Entry : 오후 1:40:58 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:40:58 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:08 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 13:43:06 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:08 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:43:06 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:14 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:43:14 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:14 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:43:14 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:14 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:43:14 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:14 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:43:14 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:15 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:43:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:15 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:43:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:43:15 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:43:15 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:08 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 13:46:08 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:16 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 13:46:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:16 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 13:46:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:16 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 13:46:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:16 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 13:46:16 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:17 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 13:46:17 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:17 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 13:46:17 PM
+-------------------------------------------------------
+Log Entry : 오후 1:46:17 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 13:46:17 PM
+-------------------------------------------------------
+Log Entry : 오후 3:11:40 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 15:11:38 PM
+-------------------------------------------------------
+Log Entry : 오후 3:11:40 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 15:11:38 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:22 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by  -- 20220117 15:26:21 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:29 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 15:26:29 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:29 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 15:26:29 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:29 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 15:26:29 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:29 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 15:26:29 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:30 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 15:26:30 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:30 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 15:26:30 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:30 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 15:26:30 PM
+-------------------------------------------------------
+Log Entry : 오후 3:26:30 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 15:26:30 PM
+-------------------------------------------------------
+Log Entry : 오후 3:27:13 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 15:27:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:14 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 16:16:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:14 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by  -- 20220117 16:16:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:22 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 16:16:22 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:22 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 16:16:22 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:22 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 16:16:22 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:22 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 16:16:22 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:23 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 16:16:23 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:23 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 16:16:23 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:23 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 16:16:23 PM
+-------------------------------------------------------
+Log Entry : 오후 4:16:23 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 16:16:23 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:05 2022년 1월 17일 월요일
+  All elements of the project(0001) have been inserted into Performance DB -- 20220117 16:21:02 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:05 2022년 1월 17일 월요일
+  Project Project Name(0001) has been opened by sj.min -- 20220117 16:21:02 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:11 2022년 1월 17일 월요일
+   Temp. Level 1(349231) has been added -- 20220117 16:21:11 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:11 2022년 1월 17일 월요일
+   Generic - 200mm(349232) has been added -- 20220117 16:21:11 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:11 2022년 1월 17일 월요일
+   Group 1(349243) has been added -- 20220117 16:21:11 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:11 2022년 1월 17일 월요일
+   Group 1(349244) has been added -- 20220117 16:21:11 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:13 2022년 1월 17일 월요일
+  element(349231) has been deleted -- 20220117 16:21:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:13 2022년 1월 17일 월요일
+  element(349243) has been deleted -- 20220117 16:21:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:13 2022년 1월 17일 월요일
+  element(349244) has been deleted -- 20220117 16:21:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:21:13 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 16:21:13 PM
+-------------------------------------------------------
+Log Entry : 오후 4:26:14 2022년 1월 17일 월요일
+  element(349232) has been modified -- 20220117 16:26:14 PM
+-------------------------------------------------------
+Log Entry : 오후 4:26:25 2022년 1월 17일 월요일
+  element(349232) has been deleted -- 20220117 16:26:25 PM
+-------------------------------------------------------

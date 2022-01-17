@@ -54,7 +54,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\GeometryController.cs" />
     <Compile Include="Data\DAO.cs" />
     <Compile Include="Geometry.cs" />
     <Compile Include="Controller\ElementController.cs" />
@@ -63,9 +62,6 @@
     <Compile Include="Log.cs" />
     <Compile Include="Controller\JsonController.cs" />
     <Compile Include="Controller\ParameterController.cs" />
-    <Compile Include="Controller\ProjectController.cs" />
-    <Compile Include="Controller\SessionController.cs" />
-    <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Model\Curve.cs" />
     <Compile Include="Model\Edge.cs" />
     <Compile Include="Model\Element.cs" />
@@ -77,7 +73,6 @@
     <Compile Include="Model\Session.cs" />
     <Compile Include="Model\Transaction.cs" />
     <Compile Include="Model\Employee.cs" />
-    <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\ViewConroller.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

@@ -4,6 +4,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Events;
 using Haeahn.Performance.Revit;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -23,27 +24,23 @@ namespace Haeahn.Performance.Revit
         public static Autodesk.Revit.UI.UIApplication rvt_uiapp;
         public static Autodesk.Revit.DB.Document rvt_doc;
         public static string projectCode = null;
+        public static Employee employee;
 
         //internal List<Autodesk.Revit.DB.Element> allRevitElements = new List<Autodesk.Revit.DB.Element>();
         internal List<Element> allElements = new List<Element>();
 
         internal DAO dao = new DAO();
-
-        internal ProjectController projectController = new ProjectController();
-        internal SessionController sessionController = new SessionController();
-        internal EmployeeController employeeController = new EmployeeController();
         internal ElementController elementController = new ElementController();
-        internal TransactionController transactionController = new TransactionController();
-
+        
         //레빗 프로그램 시작 시 발생하는 이벤트
         public Result OnStartup(Autodesk.Revit.UI.UIControlledApplication application)
         {
             try
             {
-                //사용자 정보 확인
-                EmployeeController employeeController = new EmployeeController();
-
                 Autodesk.Revit.ApplicationServices.ControlledApplication controlledApplication = application.ControlledApplication;
+
+                //사용자 정보 생성
+                employee = new Employee("20210916");
 
                 application.Idling += new EventHandler<Autodesk.Revit.UI.Events.IdlingEventArgs>(OnIdling);
                 controlledApplication.DocumentOpened += new EventHandler<Autodesk.Revit.DB.Events.DocumentOpenedEventArgs>(OnDocumentOpened);
@@ -82,10 +79,9 @@ namespace Haeahn.Performance.Revit
                 rvt_uidoc = rvt_uiapp.ActiveUIDocument;
                 rvt_doc = rvt_uidoc.Document;
 
-                Employee employee = employeeController.CreateEmployee("20210916");
                 ProjectInfo projectInformation = rvt_doc.ProjectInformation;
-                Project project = (projectInformation == null) ? null : projectController.GetProject(projectInformation);
-                Session session = sessionController.GetSession(employee, project);
+                Project project = (projectInformation == null) ? null : new Project(projectInformation);
+                Session session = new Session(employee, project);
 
                 string currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
                 session.StartTime = currentDateTime;
@@ -93,7 +89,7 @@ namespace Haeahn.Performance.Revit
                 projectCode = dao.SelectProjectCode(project);
 
                 //Project Code가 없으면 기존에 DB 삽입된 적이 없는 Project 데이터이다.
-                //Project 정보와 Element 정보를 DB에 새로 삽입힌다.
+                //Project 정보와 Element 정보를 DB에 새로 삽입한다.
                 if (projectCode == null)
                 {
                     projectCode = project.Code;
@@ -102,9 +98,9 @@ namespace Haeahn.Performance.Revit
 
                     foreach (var rvt_element in allRevitElements)
                     {
-                        allElements.Add(elementController.ConvertRevitElementToElement(rvt_element));
+                        allElements.Add(new Element(rvt_element));
                     }
-                    //모든객체(Element)정보 DB에 입력
+                    //모든객체(Element)정보를 DB에 입력
                     dao.InsertElements(allElements);
                     Log.WriteToFile(string.Format("All elements of the project({0}) have been inserted into Performance DB -- {1}", projectCode, currentDateTime));
                 }
@@ -137,9 +133,9 @@ namespace Haeahn.Performance.Revit
                 string currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
 
                 ElementController elementController = new ElementController();
-                Transaction transaction = new Transaction();
                 DAO dao = new DAO();
 
+                #region ADDED ELEMENTS
                 //추가된 객체 정보 기록.
                 if (addedElementIds.Count > 0)
                 {
@@ -148,19 +144,20 @@ namespace Haeahn.Performance.Revit
                     foreach (var elementId in addedElementIds)
                     {
                         Autodesk.Revit.DB.Element rvt_element = rvt_doc.GetElement(elementId);
-                        Element element = elementController.ConvertRevitElementToElement(rvt_element);
+                        Element element = new Element(rvt_element);
                         addedElements.Add(element);
                         allElements.AddRange(addedElements);
                         allElements.Add(element);
-                        transactions.Add(transactionController.GetTransaction(element, null, EventType.Added));
+                        transactions.Add(new Transaction(element, null, EventType.Added));
                         Log.WriteToFile(string.Format(" {0}({1}) has been added -- {2}", element.Name, element.Id, currentDateTime));
                     }
 
                     dao.InsertElements(addedElements);
                     dao.InsertTransactions(transactions);
                 }
+                #endregion
 
-                ////삭제된 객체 정보 기록.
+                #region DELETED ELEMENTS
                 if (deletedElementIds.Count > 0)
                 {
                     List<Element> deletedElements = new List<Element>();
@@ -169,7 +166,7 @@ namespace Haeahn.Performance.Revit
                     foreach (var elementId in deletedElementIds)
                     {
                         Element element = (allElements.Find(x => x.Id == elementId.ToString()));
-                        transactions.Add(transactionController.GetTransaction(element, null, EventType.Deleted));
+                        transactions.Add(new Transaction(element, null, EventType.Deleted));
                         allElements.Remove(allElements.Find(x => x.Id == elementId.ToString()));
                         Log.WriteToFile(string.Format("element({0}) has been deleted -- {1}", elementId, currentDateTime));
                     }
@@ -177,7 +174,9 @@ namespace Haeahn.Performance.Revit
                     dao.DeleteElements(deletedElementIds.Select(x => x.ToString()));
                     dao.InsertTransactions(transactions);
                 }
+                #endregion
 
+                #region MODIFIED ELEMENTS
                 ////변경된 객체 정보 기록.
                 if (modifiedElementIds.Count > 0)
                 {
@@ -189,14 +188,15 @@ namespace Haeahn.Performance.Revit
                         Autodesk.Revit.DB.Element rvt_element = rvt_doc.GetElement(elementId);
                         Element element = (allElements.Find(x => x.Id == elementId.ToString()));
                         modifiedElements.Add(element);
-                        var differences = JsonConvert.SerializeObject(element.CompareTo(elementController.ConvertRevitElementToElement(rvt_element))).ToString();
-                        transactions.Add(transactionController.GetTransaction(element, differences, EventType.Modified));
+                        var differences =  element.CompareTo(new Element(rvt_element));
+                        transactions.Add(new Transaction(element, differences, EventType.Modified));
                         Log.WriteToFile(string.Format("element({0}) has been modified -- {1}", elementId.ToString(), currentDateTime));
                     }
 
                     dao.UpdateElements(modifiedElements);
                     dao.InsertTransactions(transactions);
                 }
+                #endregion
             }
             catch (Exception ex)
             {
