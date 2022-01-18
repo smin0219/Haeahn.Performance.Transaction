@@ -27,7 +27,8 @@ namespace Haeahn.Performance.Revit
         public string FamilyName { get; set; }
         public string TypeName { get; set; }
         public string Location { get; set; }
-        //public string Geometry { get; set; }
+        public string LevelId { get; set; }
+        public string MaterialIds { get; set; }
         public string Verticies { get; set; }
         public Dictionary<string, string> BoundingBox { get; set; }
         public Dictionary<string, string> InstanceParameter { get; set; }
@@ -138,6 +139,14 @@ namespace Haeahn.Performance.Revit
 
                 this.Location = utils.LocationToString(rvt_element.Location);
 
+                this.LevelId = rvt_element.LevelId.ToString();
+
+                var materialIds = rvt_element.GetMaterialIds(false);
+
+                if(materialIds.Count > 0)
+                {
+                    this.MaterialIds = "[" + string.Join(", ", materialIds.Select(x => x.ToString())) + "]";
+                }
 
                 if (!(rvt_element is FamilyInstance) && boundingBox != null)
                 {

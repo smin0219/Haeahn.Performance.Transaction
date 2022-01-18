@@ -26,13 +26,11 @@ namespace Haeahn.Performance.Revit
         public static string projectCode = null;
         public static Employee employee;
 
-        //internal List<Autodesk.Revit.DB.Element> allRevitElements = new List<Autodesk.Revit.DB.Element>();
-        internal List<Element> allElements = new List<Element>();
-
         internal DAO dao = new DAO();
+        internal List<Element> allElements = new List<Element>();
         internal ElementController elementController = new ElementController();
         
-        //레빗 프로그램 시작 시 발생하는 이벤트
+        //레빗 프로그램 시작 시 발생하는 이벤트.
         public Result OnStartup(Autodesk.Revit.UI.UIControlledApplication application)
         {
             try
@@ -56,12 +54,12 @@ namespace Haeahn.Performance.Revit
                 return Result.Failed;
             }
         }
-        //레빗 프로그램 종료 시 발생하는 이벤트
+        //레빗 프로그램 종료 시 발생하는 이벤트.
         public Result OnShutdown(Autodesk.Revit.UI.UIControlledApplication application)
         {
             return Result.Succeeded;
         }
-        //대기 상태일때 실시간으로 발생하는 이벤트
+        //대기 상태일때 실시간으로 발생하는 이벤트.
         public void OnIdling(object sender, Autodesk.Revit.UI.Events.IdlingEventArgs args)
         {
             //현재 열려있는 앱의 정보를 가져온다.
@@ -71,7 +69,7 @@ namespace Haeahn.Performance.Revit
                 rvt_app = rvt_uiapp.Application;
             }
         }
-        //문서를 열었을때 발생하는 이벤트
+        //문서를 열었을때 발생하는 이벤트.
         public void OnDocumentOpened(object sender, Autodesk.Revit.DB.Events.DocumentOpenedEventArgs args)
         {
             try
@@ -99,7 +97,7 @@ namespace Haeahn.Performance.Revit
                     foreach (var rvt_element in allRevitElements)
                     {
                         allElements.Add(new Element(rvt_element));
-                    }
+                    }   
                     //모든객체(Element)정보를 DB에 입력
                     dao.InsertElements(allElements);
                     Log.WriteToFile(string.Format("All elements of the project({0}) have been inserted into Performance DB -- {1}", projectCode, currentDateTime));
@@ -107,7 +105,7 @@ namespace Haeahn.Performance.Revit
                 else
                 {
                     allElements = dao.SelectAllElements(project).ToList();
-                    //allRevitElements = elementController.GetAllRevitElements(rvt_doc).ToList();
+                    var test = elementController.GetAllRevitElements(rvt_doc).ToList();
                 }
 
                 //프로젝트 문서를 열람한 사람과 해당 프로젝트 정보 시간을 로그파일에 기록.
@@ -146,7 +144,6 @@ namespace Haeahn.Performance.Revit
                         Autodesk.Revit.DB.Element rvt_element = rvt_doc.GetElement(elementId);
                         Element element = new Element(rvt_element);
                         addedElements.Add(element);
-                        allElements.AddRange(addedElements);
                         allElements.Add(element);
                         transactions.Add(new Transaction(element, null, EventType.Added));
                         Log.WriteToFile(string.Format(" {0}({1}) has been added -- {2}", element.Name, element.Id, currentDateTime));
@@ -166,13 +163,20 @@ namespace Haeahn.Performance.Revit
                     foreach (var elementId in deletedElementIds)
                     {
                         Element element = (allElements.Find(x => x.Id == elementId.ToString()));
-                        transactions.Add(new Transaction(element, null, EventType.Deleted));
-                        allElements.Remove(allElements.Find(x => x.Id == elementId.ToString()));
-                        Log.WriteToFile(string.Format("element({0}) has been deleted -- {1}", elementId, currentDateTime));
+                        //TEST - 기존의 존재하지 않는 객체도 있어서 확인후 조정
+                        if (element != null)
+                        {
+                            transactions.Add(new Transaction(element, null, EventType.Deleted));
+                            allElements.Remove(allElements.Find(x => x.Id == elementId.ToString()));
+                            Log.WriteToFile(string.Format("element({0}) has been deleted -- {1}", elementId, currentDateTime));
+                        }
                     }
 
-                    dao.DeleteElements(deletedElementIds.Select(x => x.ToString()));
-                    dao.InsertTransactions(transactions);
+                    if(deletedElements.Count > 0)
+                    {
+                        dao.DeleteElements(deletedElementIds.Select(x => x.ToString()));
+                        dao.InsertTransactions(transactions);
+                    }
                 }
                 #endregion
 
@@ -187,14 +191,22 @@ namespace Haeahn.Performance.Revit
                     {
                         Autodesk.Revit.DB.Element rvt_element = rvt_doc.GetElement(elementId);
                         Element element = (allElements.Find(x => x.Id == elementId.ToString()));
-                        modifiedElements.Add(element);
-                        var differences =  element.CompareTo(new Element(rvt_element));
-                        transactions.Add(new Transaction(element, differences, EventType.Modified));
-                        Log.WriteToFile(string.Format("element({0}) has been modified -- {1}", elementId.ToString(), currentDateTime));
+
+                        //TEST - 기존의 존재하지 않는 객체도 있어서 확인후 조정
+                        if(element != null)
+                        {
+                            modifiedElements.Add(element);
+                            var differences = element.CompareTo(new Element(rvt_element));
+                            transactions.Add(new Transaction(element, differences, EventType.Modified));
+                            Log.WriteToFile(string.Format("element({0}) has been modified -- {1}", elementId.ToString(), currentDateTime));
+                        }
                     }
 
-                    dao.UpdateElements(modifiedElements);
-                    dao.InsertTransactions(transactions);
+                    if(modifiedElements.Count > 0)
+                    {
+                        dao.UpdateElements(modifiedElements);
+                        dao.InsertTransactions(transactions);
+                    }
                 }
                 #endregion
             }
@@ -204,6 +216,7 @@ namespace Haeahn.Performance.Revit
                 Log.WriteToFile(ex.ToString());
             }
         }
+        //문서를 닫을때 발생하는 이벤트.
         public void OnDocumentClosed(object sender, Autodesk.Revit.DB.Events.DocumentClosedEventArgs args)
         {
             try

@@ -35,7 +35,6 @@ namespace Haeahn.Performance.Revit
                 return null;
             }
         }
-        
         internal string GetCategoryType(Autodesk.Revit.DB.Element element)
         {
             return element.Category.CategoryType.ToString();

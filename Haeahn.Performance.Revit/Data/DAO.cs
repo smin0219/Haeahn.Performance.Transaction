@@ -56,7 +56,7 @@ namespace Haeahn.Performance.Revit
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO element VALUES" +
                         "(@id, @name, @project_code, @project_name, @category_name, @category_type, @family_name, @type_name, " +
-                        "@location, @verticies, @bounding_box, @instance_parameter, @type_parameter)", connection);
+                        "@location, @level_id, @material_id, @verticies, @bounding_box, @instance_parameter, @type_parameter)", connection);
 
                     command.Parameters.Add("@id", SqlDbType.NVarChar);
                     command.Parameters.Add("@name", SqlDbType.NVarChar);
@@ -67,6 +67,8 @@ namespace Haeahn.Performance.Revit
                     command.Parameters.Add("@family_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@type_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@location", SqlDbType.NVarChar);
+                    command.Parameters.Add("@level_id", SqlDbType.NVarChar);
+                    command.Parameters.Add("@material_id", SqlDbType.NVarChar);
                     command.Parameters.Add("@verticies", SqlDbType.NVarChar);
                     command.Parameters.Add("@bounding_box", SqlDbType.NVarChar);
                     command.Parameters.Add("@instance_parameter", SqlDbType.NVarChar);
@@ -86,6 +88,8 @@ namespace Haeahn.Performance.Revit
                         command.Parameters["@family_name"].Value = (object)element.FamilyName ?? DBNull.Value;
                         command.Parameters["@type_name"].Value = (object)element.TypeName ?? DBNull.Value;
                         command.Parameters["@location"].Value = (object)element.Location ?? DBNull.Value;
+                        command.Parameters["@level_id"].Value = (object)element.LevelId ?? DBNull.Value;
+                        command.Parameters["@material_id"].Value = (object)element.MaterialIds?? DBNull.Value;
                         command.Parameters["@verticies"].Value = (object)element.Verticies ?? DBNull.Value;
                         command.Parameters["@bounding_box"].Value = (object)element.BoundingBox ?? DBNull.Value;
                         command.Parameters["@instance_parameter"].Value = (object)element.InstanceParameter ?? DBNull.Value;
