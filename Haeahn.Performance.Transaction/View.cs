@@ -8,7 +8,10 @@ namespace Haeahn.Performance.Transaction
 {
     internal class View
     {
-        internal View() { }
+        internal View()
+        {
+        }
+
         internal ViewType GetViewType(Autodesk.Revit.DB.View activeView)
         {
             if (activeView is Autodesk.Revit.DB.View3D)

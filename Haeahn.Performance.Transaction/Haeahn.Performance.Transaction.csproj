@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\ElementController.cs" />
     <Compile Include="Controller\TransactionController.cs" />
     <Compile Include="Data\DAO.cs" />
     <Compile Include="Enum.cs" />
@@ -60,7 +59,7 @@
     <Compile Include="Model\Element.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Project.cs" />
-    <Compile Include="Model\Transaction.cs" />
+    <Compile Include="Model\TransactionLog.cs" />
     <Compile Include="Model\View.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

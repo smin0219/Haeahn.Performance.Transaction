@@ -8,7 +8,6 @@ namespace Haeahn.Performance.Transaction
 {
     class Employee
     {
-        internal Employee() { }
         internal Employee(string employeeId)
         {
             CreateEmployee(employeeId);
@@ -26,6 +25,7 @@ namespace Haeahn.Performance.Transaction
             this.Department = "IT연구실";
             return this;
         }
+
         internal Employee GetEmployee()
         {
             return this;

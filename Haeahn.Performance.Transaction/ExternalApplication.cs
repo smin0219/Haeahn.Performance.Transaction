@@ -31,13 +31,14 @@ namespace Haeahn.Performance.Transaction
             Autodesk.Revit.ApplicationServices.ControlledApplication controlledApplication = application.ControlledApplication;
 
             application.Idling += new EventHandler<Autodesk.Revit.UI.Events.IdlingEventArgs>(OnIdlingEvent);
-
-            controlledApplication.DocumentOpened += new EventHandler<Autodesk.Revit.DB.Events.DocumentOpenedEventArgs>(OnDocumentOpened);
-            controlledApplication.DocumentCreated += new EventHandler<Autodesk.Revit.DB.Events.DocumentCreatedEventArgs>(OnDocumentCreated);
             controlledApplication.DocumentChanged += new EventHandler<Autodesk.Revit.DB.Events.DocumentChangedEventArgs>(OnDocumentChanged);
-            controlledApplication.FamilyLoadedIntoDocument += new EventHandler<Autodesk.Revit.DB.Events.FamilyLoadedIntoDocumentEventArgs>(OnFamilyLoadedIntoDocument);
 
             return Result.Succeeded;
+        }
+
+        public Result OnShutdown(UIControlledApplication application)
+        {
+            throw new NotImplementedException();
         }
 
         public void OnIdlingEvent(object sender, Autodesk.Revit.UI.Events.IdlingEventArgs args)
@@ -47,47 +48,51 @@ namespace Haeahn.Performance.Transaction
             {
                 rvt_uiapp = sender as Autodesk.Revit.UI.UIApplication;
                 rvt_app = rvt_uiapp.Application;
-            }
-        }
 
-        //문서를 열었을때 발생하는 이벤트.
-        public void OnDocumentOpened(object sender, Autodesk.Revit.DB.Events.DocumentOpenedEventArgs args)
-        {
-            try
+            }
+            else
             {
-                //오픈된 문서 정보 수집
                 rvt_uidoc = rvt_uiapp.ActiveUIDocument;
-                rvt_doc = rvt_uidoc.Document;
+                rvt_doc = (rvt_uidoc != null) ? rvt_uidoc.Document : null;
 
-                //프로젝트 정보 수집
-                ProjectInfo projectInformation = rvt_doc.ProjectInformation;
-                project = (projectInformation == null) ? null : new Project(projectInformation);
-
-            }
-            catch (Exception ex)
-            {
-                Debug.Assert(false, ex.ToString());
-                Log.WriteToFile(ex.ToString());
-            }
-        }
-
-        public void OnDocumentCreated(object sender, Autodesk.Revit.DB.Events.DocumentCreatedEventArgs args)
-        {
-            try
-            {
-                //오픈된 문서 정보 수집
-                rvt_uidoc = rvt_uiapp.ActiveUIDocument;
-                rvt_doc = rvt_uidoc.Document;
-
-                //프로젝트 정보 수집
-                ProjectInfo projectInformation = rvt_doc.ProjectInformation;
-                Project project = (projectInformation == null) ? null : new Project(projectInformation);
-
-            }
-            catch (Exception ex)
-            {
-                Debug.Assert(false, ex.ToString());
-                Log.WriteToFile(ex.ToString());
+                if(rvt_doc != null)
+                {
+                    //패밀리 파일
+                    if (rvt_doc.IsFamilyDocument)
+                    {
+                        if(project == null)
+                        {
+                            project = new Project();
+                            
+                        }
+                        project.Name = "RFA";
+                        project.Code = "RFA";
+                        project.Type = "RFA";
+                    }
+                    //그외
+                    else
+                    {
+                        ProjectInfo projectInformation = rvt_doc.ProjectInformation;
+                        if (projectInformation != null)
+                        {
+                            if(project == null)
+                            {
+                                project = new Project(projectInformation);
+                            }
+                            else
+                            {
+                                project = project.SetProject(projectInformation);
+                            }
+                        }
+                        else
+                        {
+                            project = new Project();
+                            project.Name = "TBD";
+                            project.Code = "TBD";
+                            project.Type = "TBD";
+                        }
+                    }
+                }
             }
         }
 
@@ -95,8 +100,14 @@ namespace Haeahn.Performance.Transaction
         {
             try
             {
-                ElementController elementController = new ElementController();
-                ElementFilter elementFilter = elementController.GetElementFilter();
+                List<Autodesk.Revit.DB.CategoryType> categoryTypes = new List<Autodesk.Revit.DB.CategoryType> 
+                { 
+                    Autodesk.Revit.DB.CategoryType.Model, 
+                    Autodesk.Revit.DB.CategoryType.Annotation 
+                };
+
+                Element element = new Element();
+                ElementFilter elementFilter = element.GetElementFilterByCategoryTypes(categoryTypes);
 
                 //추가/제거/변경된 객체 ID 수집.
                 var addedElementIds = args.GetAddedElementIds(elementFilter);
@@ -105,16 +116,18 @@ namespace Haeahn.Performance.Transaction
                 var transactionNames = args.GetTransactionNames();
                 
                 DAO dao = new DAO();
-                var collector = new FilteredElementCollector(rvt_doc).WherePasses(elementFilter);
-                TransactionController transactionController = new TransactionController();
+                TransactionLog transactionLog = new TransactionLog();
 
                 #region ADDED ELEMENTS
                 if (addedElementIds.Count > 0)
                 {
-                    List<TransactionLog> transactionLogs = transactionController.GetTransactionLogs(addedElementIds, project, employee, EventType.Added);
-                    transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
-                    transactionLogs.Select(x => x.ViewType != null);
-                    dao.InsertTransactionLogs(transactionLogs);
+                    List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(addedElementIds, project, employee, EventType.Added);
+                    if(transactionLogs.Count > 0)
+                    {
+                        transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
+                        transactionLogs.Select(x => x.ViewType != null);
+                        dao.InsertTransactionLogs(transactionLogs);
+                    }
                 }
                 #endregion
 
@@ -123,18 +136,25 @@ namespace Haeahn.Performance.Transaction
                 #region MODIFIED ELEMENTS
                 if (modifiedElementIds.Count > 0 && !transactionNames.Contains("Paste"))
                 {
-                    List<TransactionLog> transactionLogs = transactionController.GetTransactionLogs(modifiedElementIds, project, employee, EventType.Modified);
-                    transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
-                    dao.InsertTransactionLogs(transactionLogs);
+                    List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(modifiedElementIds, project, employee, EventType.Modified);
+                    if (transactionLogs.Count > 0)
+                    {
+                        transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
+                        dao.InsertTransactionLogs(transactionLogs);
+                    }
                 }
                 #endregion
 
                 #region DELETED ELEMENTS
                 if (deletedElementIds.Count > 0)
                 {
-                    List<TransactionLog> transactionLogs = transactionController.GetTransactionLogs(deletedElementIds, project, employee, EventType.Deleted);
-                    transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
-                    dao.InsertTransactionLogs(transactionLogs);
+                    List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(deletedElementIds, project, employee, EventType.Deleted);
+                    if (transactionLogs.Count > 0)
+                    {
+                        transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
+                        transactionLogs = transactionLogs.Where(x => x.Transaction != "Load Family").ToList();
+                        dao.InsertTransactionLogs(transactionLogs);
+                    }
                 }
                 #endregion
 
@@ -145,24 +165,7 @@ namespace Haeahn.Performance.Transaction
                 Log.WriteToFile(ex.ToString());
             }
         }
-        public void OnFamilyLoadedIntoDocument(object sender, Autodesk.Revit.DB.Events.FamilyLoadedIntoDocumentEventArgs args)
-        {
-            //오픈된 문서 정보 수집
-            rvt_uidoc = rvt_uiapp.ActiveUIDocument;
-            rvt_doc = rvt_uidoc.Document;
 
-            //프로젝트 정보 수집
-            ProjectInfo projectInformation = rvt_doc.ProjectInformation;
-            project = (projectInformation == null) ? null : new Project(projectInformation);
-        }
-
-        public Result OnShutdown(UIControlledApplication application)
-        {
-            throw new NotImplementedException();
-        }
-
-        #region Autodesk.Revit.DB.Events
-
-        #endregion
+        
     }
 }

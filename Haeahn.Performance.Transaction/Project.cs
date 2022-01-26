@@ -9,15 +9,16 @@ namespace Haeahn.Performance.Transaction
 {
     internal class Project
     {
-        internal Project() {}
-        internal Project(Autodesk.Revit.DB.ProjectInfo projectInfo)
-        {
-            SetProject(projectInfo);
-        }
         internal string Name { get; set; }
         internal string Code { get; set; }
         internal string Type { get; set; }
-        internal Project SetProject(Autodesk.Revit.DB.ProjectInfo projectInfo)
+
+        internal Project(Autodesk.Revit.DB.ProjectInfo projectInfo)
+        {
+            CreateProject(projectInfo);
+        }
+
+        internal Project CreateProject(Autodesk.Revit.DB.ProjectInfo projectInfo)
         {
             if (ExternalApplication.rvt_doc != null)
             {

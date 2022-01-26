@@ -9,6 +9,7 @@ namespace Haeahn.Performance.Transaction
 {
     internal class TransactionLog
     {
+
         internal TransactionLog(Project project, Employee employee, EventType eventType)
         {
             CreateTransactionLog(project, employee, eventType);
@@ -36,7 +37,7 @@ namespace Haeahn.Performance.Transaction
         internal string EventType { get; set; }
         internal string OccurredOn { get; set; }
 
-        internal TransactionLog CreateTransactionLog(Project project, Employee employee, EventType eventType)
+        internal TransactionLog GetTransactionLog(Project project, Employee employee, EventType eventType)
         {
             this.ProjectCode = (project == null) ? "RFA" : project.Code;    
             this.ProjectName = (project == null) ? "RFA" : project.Name;
@@ -56,7 +57,7 @@ namespace Haeahn.Performance.Transaction
 
             return this;
         }
-        internal TransactionLog CreateTransactionLog(Element element, Project project, Employee employee, ViewType viewType, EventType eventType)
+        internal TransactionLog GetTransactionLog(Element element, Project project, Employee employee, ViewType viewType, EventType eventType)
         {
             this.ProjectCode = (project == null) ? "RFA" : project.Code;
             this.ProjectName = (project == null) ? "RFA" : project.Name;
@@ -75,6 +76,33 @@ namespace Haeahn.Performance.Transaction
             this.OccurredOn = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
 
             return this;
+        }
+        internal List<TransactionLog> GetTransactionLogs(ICollection<Autodesk.Revit.DB.ElementId> elementIds, Project project, Employee employee, EventType eventType)
+        {
+            var currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
+            List<TransactionLog> transactionLogs = new List<TransactionLog>();
+
+            Autodesk.Revit.DB.Element rvt_element = null;
+            Element element = null;
+
+            foreach (var elementId in elementIds)
+            {
+                if (eventType != EventType.Deleted)
+                {
+                    rvt_element = ExternalApplication.rvt_doc.GetElement(elementId);
+                    element = new Element(rvt_element);
+                    var view = new View();
+                    var viewType = view.GetViewType(ExternalApplication.rvt_doc.ActiveView);
+                    transactionLogs.Add(new TransactionLog(element, project, employee, viewType, eventType));
+                }
+                else
+                {
+                    transactionLogs.Add(new TransactionLog(project, employee, EventType.Deleted));
+                    transactionLogs.Where(x => x.EventType == EventType.Deleted.ToString()).Last().ElementId = elementId.ToString();
+                }
+            }
+
+            return transactionLogs;
         }
     }
 }

@@ -13,8 +13,9 @@ namespace Haeahn.Performance.Transaction
         internal Element() { }
         internal Element(Autodesk.Revit.DB.Element rvt_element)
         {
-            SetElement(rvt_element);
+            CreateElement(rvt_element);
         }
+
         public string Id { get; set; }
         public string Name { get; set; }
         public string ProjectCode { get; set; }
@@ -23,9 +24,13 @@ namespace Haeahn.Performance.Transaction
         public string CategoryType { get; set; }
         public string FamilyName { get; set; }
         public string TypeName { get; set; }
+        public string Location { get; set; }
+        public string LevelId { get; set; }
+        public string MaterialIds { get; set; }
+        public string Verticies { get; set; }
 
         //레벳의 객체를 필요한 정보만 따로 정리한 Element로 만들어서 반환한다.
-        internal Element SetElement(Autodesk.Revit.DB.Element rvt_element)
+        internal Element CreateElement(Autodesk.Revit.DB.Element rvt_element)
         {
             try
             {
@@ -39,14 +44,11 @@ namespace Haeahn.Performance.Transaction
                 this.CategoryName = (rvt_element.Category == null) ? string.Empty : rvt_element.Category.Name;
                 this.CategoryType = (rvt_element.Category == null) ? string.Empty : rvt_element.Category.CategoryType.ToString();
 
+                Options options = new Options();
+                GeometryElement geometryElement = rvt_element.get_Geometry(options);
+                BoundingBoxXYZ boundingBox = rvt_element.get_BoundingBox(null);
                 FamilyInstance familyInstance = rvt_element as FamilyInstance;
                 ElementType type = rvt_doc.GetElement(rvt_element.GetTypeId()) as ElementType;
-
-                if(type != null)
-                {
-                    this.FamilyName = type.FamilyName;
-                    this.TypeName = type.Name;
-                }
 
                 return this;
             }
@@ -57,14 +59,14 @@ namespace Haeahn.Performance.Transaction
                 return null;
             }
         }
-        internal Autodesk.Revit.DB.ElementFilter GetElementFilterByCategoryTypes(List<Autodesk.Revit.DB.CategoryType> categoryTypes)
+        internal Autodesk.Revit.DB.ElementFilter GetElementFilterByCategoryTypes(IEnumerable<Autodesk.Revit.DB.CategoryType> categoryTypes)
         {
             List<Autodesk.Revit.DB.ElementFilter> elementFilters = new List<Autodesk.Revit.DB.ElementFilter>();
             Autodesk.Revit.DB.Categories categories = ExternalApplication.rvt_doc.Settings.Categories;
 
             foreach (Autodesk.Revit.DB.Category category in categories)
             {
-                if (categoryTypes.Contains(category.CategoryType))
+                if (categoryTypes.Contains(Autodesk.Revit.DB.CategoryType.Model) || categoryTypes.Contains(Autodesk.Revit.DB.CategoryType.Annotation))
                 {
                     elementFilters.Add(new Autodesk.Revit.DB.ElementCategoryFilter(category.Id));
                 }
