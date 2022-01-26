@@ -2,8 +2,8 @@
 <RevitAddIns>
 	<AddIn Type="Application">
 		<Name>Application Performance</Name>
-		<Assembly>Haeahn.Performance.Revit.dll</Assembly>
-		<FullClassName>Haeahn.Performance.Revit.ExternalApplication</FullClassName>
+		<Assembly>Haeahn.Performance.Transaction.Revit.dll</Assembly>
+		<FullClassName>Haeahn.Performance.Transaction.Revit.ExternalApplication</FullClassName>
 		<ClientId>e6af16c8-ad34-4486-be88-fc2ddef74de7</ClientId>
 		<VendorId>ADSK</VendorId>
 		<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>

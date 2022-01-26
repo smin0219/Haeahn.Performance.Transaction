@@ -127,17 +127,15 @@ namespace Haeahn.Performance.Revit
                 using (SqlConnection connection = new SqlConnection())
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO transaction_log VALUES" +
-                        "(@project_code, @element_id, @element_name, @category_type, @difference, @employee_id, @employee_name, @event_type, @event_datetime)", connection);
+                        "(@project_code, @element_id, @difference, @employee_id, @employee_name, @event_type, @occurred_on)", connection);
 
                     command.Parameters.Add("@project_code", SqlDbType.NVarChar);
                     command.Parameters.Add("@element_id", SqlDbType.NVarChar);
-                    command.Parameters.Add("@element_name", SqlDbType.NVarChar);
-                    command.Parameters.Add("@category_type", SqlDbType.NVarChar);
                     command.Parameters.Add("@difference", SqlDbType.NVarChar);
                     command.Parameters.Add("@employee_id", SqlDbType.NVarChar);
                     command.Parameters.Add("@employee_name", SqlDbType.NVarChar);
                     command.Parameters.Add("@event_type", SqlDbType.NVarChar);
-                    command.Parameters.Add("@event_datetime", SqlDbType.NVarChar);
+                    command.Parameters.Add("@occurred_on", SqlDbType.NVarChar);
 
                     connection.ConnectionString = GetConnectionString();
                     connection.Open();
@@ -146,13 +144,11 @@ namespace Haeahn.Performance.Revit
                     {
                         command.Parameters["@project_code"].Value = (object)transaction.ProjectCode ?? DBNull.Value;
                         command.Parameters["@element_id"].Value = (object)transaction.ElementId ?? DBNull.Value;
-                        command.Parameters["@element_name"].Value = (object)transaction.ElementName?? DBNull.Value;
-                        command.Parameters["@category_type"].Value = (object)transaction.CategoryType ?? DBNull.Value;
                         command.Parameters["@difference"].Value = (object)transaction.Difference ?? DBNull.Value;
                         command.Parameters["@employee_id"].Value = (object)transaction.EmployeeId ?? DBNull.Value;
                         command.Parameters["@employee_name"].Value = (object)transaction.EmployeeName ?? DBNull.Value;
                         command.Parameters["@event_type"].Value = (object)transaction.EventType ?? DBNull.Value;
-                        command.Parameters["@event_datetime"].Value = (object)transaction.EventDateTime ?? DBNull.Value;
+                        command.Parameters["@occurred_on"].Value = (object)transaction.OccurredOn ?? DBNull.Value;
 
                         command.ExecuteNonQuery();
                     }
@@ -201,6 +197,37 @@ namespace Haeahn.Performance.Revit
                 return null;
             }
         }
+        internal string SelectElement(Element element)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection())
+                {
+                    SqlCommand command = new SqlCommand("SELECT TOP 1 id FROM element WHERE id = @id AND project_code = @project_code", connection);
+                    command.Parameters.Add("@id", SqlDbType.NVarChar).Value = (object)element.Id ?? DBNull.Value;
+                    command.Parameters.Add("@project_code", SqlDbType.NVarChar).Value = (object)element.ProjectCode ?? DBNull.Value;
+
+                    connection.ConnectionString = GetConnectionString();
+                    connection.Open();
+
+                    var reader = command.ExecuteReader();
+                    string projectCode = null;
+
+                    while (reader.Read())
+                    {
+                        projectCode = reader["id"].ToString();
+                    }
+                    return projectCode;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.Assert(false, ex.ToString());
+                Log.WriteToFile(ex.ToString());
+                return null;
+            }
+        }
+
         //프로젝트내에 존재하는 모든 객체를 반환한다.
         internal IEnumerable<Element> SelectAllElements(Project project)
         {
@@ -238,36 +265,6 @@ namespace Haeahn.Performance.Revit
                     }
 
                     return elements;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.Assert(false, ex.ToString());
-                Log.WriteToFile(ex.ToString());
-                return null;
-            }
-        }
-        internal string SelectElement(Element element)
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection())
-                {
-                    SqlCommand command = new SqlCommand("SELECT TOP 1 id FROM element WHERE id = @id AND project_code = @project_code", connection);
-                    command.Parameters.Add("@id", SqlDbType.NVarChar).Value = (object)element.Id ?? DBNull.Value;
-                    command.Parameters.Add("@project_code", SqlDbType.NVarChar).Value = (object)element.ProjectCode ?? DBNull.Value;
-
-                    connection.ConnectionString = GetConnectionString();
-                    connection.Open();
-
-                    var reader = command.ExecuteReader();
-                    string projectCode = null;
-
-                    while (reader.Read())
-                    {
-                        projectCode = reader["id"].ToString();
-                    }
-                    return projectCode;
                 }
             }
             catch (Exception ex)

@@ -31,7 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>Performance.addin</ApplicationManifest>
+    <ApplicationManifest>Performance.Transaction.addin</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -84,7 +84,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Revit.exe.config" />
-    <None Include="Performance.addin" />
+    <None Include="Performance.Transaction.addin" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,7 +94,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)Haeahn.Performance.Revit.dll" "C:\Users\SungjaeMin\AppData\Roaming\Autodesk\Revit\Addins\2022"
-copy "$(ProjectDir)Performance.addin" "C:\Users\SungjaeMin\AppData\Roaming\Autodesk\Revit\Addins\2022"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

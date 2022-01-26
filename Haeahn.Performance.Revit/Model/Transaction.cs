@@ -23,7 +23,7 @@ namespace Haeahn.Performance.Revit
         internal string EmployeeId { get; set; }
         internal string EmployeeName { get; set; }
         internal string EventType { get; set; }
-        internal string EventDateTime { get; set; }
+        internal string OccurredOn { get; set; }
 
         internal Transaction CreateTransaction(Element element, string difference, EventType eventType)
         {
@@ -35,7 +35,7 @@ namespace Haeahn.Performance.Revit
             this.EmployeeId = ExternalApplication.employee.Id;
             this.EmployeeName = ExternalApplication.employee.Name;
             this.EventType = eventType.ToString();
-            this.EventDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
+            this.OccurredOn = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
 
             return this;
         }
