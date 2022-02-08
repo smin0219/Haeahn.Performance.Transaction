@@ -62,7 +62,7 @@ namespace Haeahn.Performance.Transaction
                     {
                         if(project == null)
                         {
-                            project = new Project();
+                            project = new Project("RFA", "RFA", "RFA");
                             
                         }
                         project.Name = "RFA";
@@ -86,10 +86,7 @@ namespace Haeahn.Performance.Transaction
                         }
                         else
                         {
-                            project = new Project();
-                            project.Name = "TBD";
-                            project.Code = "TBD";
-                            project.Type = "TBD";
+                            project = new Project("TBD", "TBD", "TBD");
                         }
                     }
                 }
@@ -124,7 +121,7 @@ namespace Haeahn.Performance.Transaction
                     List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(addedElementIds, project, employee, EventType.Added);
                     if(transactionLogs.Count > 0)
                     {
-                        transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
+                        transactionLogs.ForEach(x => x.TransactionName = transactionNames.First());
                         transactionLogs.Select(x => x.ViewType != null);
                         dao.InsertTransactionLogs(transactionLogs);
                     }
@@ -139,7 +136,7 @@ namespace Haeahn.Performance.Transaction
                     List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(modifiedElementIds, project, employee, EventType.Modified);
                     if (transactionLogs.Count > 0)
                     {
-                        transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
+                        transactionLogs.ForEach(x => x.TransactionName = transactionNames.First());
                         dao.InsertTransactionLogs(transactionLogs);
                     }
                 }
@@ -151,8 +148,8 @@ namespace Haeahn.Performance.Transaction
                     List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(deletedElementIds, project, employee, EventType.Deleted);
                     if (transactionLogs.Count > 0)
                     {
-                        transactionLogs.ForEach(x => x.Transaction = transactionNames.First());
-                        transactionLogs = transactionLogs.Where(x => x.Transaction != "Load Family").ToList();
+                        transactionLogs.ForEach(x => x.TransactionName = transactionNames.First());
+                        transactionLogs = transactionLogs.Where(x => x.TransactionName != "Load Family").ToList();
                         dao.InsertTransactionLogs(transactionLogs);
                     }
                 }
@@ -165,7 +162,5 @@ namespace Haeahn.Performance.Transaction
                 Log.WriteToFile(ex.ToString());
             }
         }
-
-        
     }
 }

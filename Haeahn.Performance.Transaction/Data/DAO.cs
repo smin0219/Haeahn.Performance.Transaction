@@ -63,7 +63,7 @@ namespace Haeahn.Performance.Transaction
                         command.Parameters["@view_type"].Value = (object)transactionLog.ViewType ?? DBNull.Value;
                         command.Parameters["@family_name"].Value = (object)transactionLog.FamilyName ?? DBNull.Value;
                         command.Parameters["@type_name"].Value = (object)transactionLog.TypeName ?? DBNull.Value;
-                        command.Parameters["@transaction_name"].Value = (object)transactionLog.Transaction ?? DBNull.Value;
+                        command.Parameters["@transaction_name"].Value = (object)transactionLog.TransactionName ?? DBNull.Value;
                         command.Parameters["@employee_id"].Value = (object)transactionLog.EmployeeId ?? DBNull.Value;
                         command.Parameters["@employee_name"].Value = (object)transactionLog.EmployeeName ?? DBNull.Value;
                         command.Parameters["@department"].Value = (object)transactionLog.Department ?? DBNull.Value;

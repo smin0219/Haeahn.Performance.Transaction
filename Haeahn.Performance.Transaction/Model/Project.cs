@@ -10,6 +10,12 @@ namespace Haeahn.Performance.Transaction
     internal class Project
     {
         internal Project() {}
+        internal Project(string name, string code, string type) 
+        {
+            this.Name = name;  
+            this.Code = code;
+            this.Type = type;  
+        }
         internal Project(Autodesk.Revit.DB.ProjectInfo projectInfo)
         {
             SetProject(projectInfo);
