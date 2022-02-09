@@ -59,12 +59,12 @@ namespace Haeahn.Performance.Transaction
             this.ProjectCode = project.Code;
             this.ProjectName = project.Name;
             this.ProjectType = project.Type;
-            this.ElementId = (element != null) ? element.Id.ToString() : null;
-            this.ElementName = (element != null) ? element.Name.ToString() : null;
-            this.CategoryType = (element != null) ? element.CategoryType : null;
-            this.CategoryName = (element != null) ? element.CategoryName : null;
-            this.FamilyName = (element != null) ? element.FamilyName : null;
-            this.TypeName = (element != null) ? element.TypeName : null;
+            this.ElementId = (element.Id != null) ? element.Id.ToString() : null;
+            this.ElementName = (element.Name != null) ? element.Name.ToString() : null;
+            this.CategoryType = (element.CategoryType != null) ? element.CategoryType : null;
+            this.CategoryName = (element.CategoryName != null) ? element.CategoryName : null;
+            this.FamilyName = (element.FamilyName != null) ? element.FamilyName : null;
+            this.TypeName = (element.TypeName != null) ? element.TypeName : null;
             this.ViewType = viewType.ToString();
             this.EmployeeId = employee.Id;
             this.EmployeeName = employee.Name;
@@ -88,21 +88,41 @@ namespace Haeahn.Performance.Transaction
 
             foreach (var elementId in elementIds)
             {
-                if (eventType != Haeahn.Performance.Transaction.EventType.Deleted)
+                if(eventType == Haeahn.Performance.Transaction.EventType.Added)
                 {
                     rvt_element = ExternalApplication.rvt_doc.GetElement(elementId);
-                    if(rvt_element != null)
+                    if (rvt_element != null)
                     {
                         element = new Element(rvt_element);
-                        
+
+                        transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
+                    }
+                    
+                }
+                else
+                { 
+                    if (ExternalApplication.selectedElementIds.Contains(elementId))
+                    {
+                        element = ExternalApplication.selectedElements.Where(el => el.Id == elementId.ToString()).First();
                         transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
                     }
                 }
-                else
-                {
-                    transactionLogs.Add(new TransactionLog(project, employee, viewType, Haeahn.Performance.Transaction.EventType.Deleted));
-                    transactionLogs.Where(x => x.EventType == Haeahn.Performance.Transaction.EventType.Deleted.ToString()).Last().ElementId = elementId.ToString();
-                }
+
+                //if (eventType != Haeahn.Performance.Transaction.EventType.Deleted)
+                //{
+                //    rvt_element = ExternalApplication.rvt_doc.GetElement(elementId);
+                //    if(rvt_element != null)
+                //    {
+                //        element = new Element(rvt_element);
+
+                //        transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
+                //    }
+                //}
+                //else
+                //{
+                //    transactionLogs.Add(new TransactionLog(project, employee, viewType, Haeahn.Performance.Transaction.EventType.Deleted));
+                //    transactionLogs.Where(x => x.EventType == Haeahn.Performance.Transaction.EventType.Deleted.ToString()).Last().ElementId = elementId.ToString();
+                //}
             }
 
             return transactionLogs;
