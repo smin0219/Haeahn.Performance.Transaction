@@ -26,6 +26,7 @@ namespace Haeahn.Performance.Transaction
 
         private Employee employee = null;
         private Project project = null;
+        private Selection selection = null;
 
         public Result OnStartup(Autodesk.Revit.UI.UIControlledApplication application)
         {
@@ -78,38 +79,7 @@ namespace Haeahn.Performance.Transaction
 
                 if (rvt_doc != null)
                 {
-                    //패밀리 파일
-                    if (rvt_doc.IsFamilyDocument)
-                    {
-                        if (project == null)
-                        {
-                            project = new Project("RFA", "RFA", "RFA");
-
-                        }
-                        project.Name = "RFA";
-                        project.Code = "RFA";
-                        project.Type = "RFA";
-                    }
-                    //프로젝트 파일
-                    else
-                    {
-                        ProjectInfo projectInformation = rvt_doc.ProjectInformation;
-                        if (projectInformation != null)
-                        {
-                            if (project == null)
-                            {
-                                project = new Project(projectInformation);
-                            }
-                            else
-                            {
-                                project = project.SetProject(projectInformation);
-                            }
-                        }
-                        else
-                        {
-                            project = new Project("TBD", "TBD", "TBD");
-                        }
-                    }
+                    project = GetProject(rvt_doc);
                 }
             }
         }
@@ -166,8 +136,6 @@ namespace Haeahn.Performance.Transaction
                 #region MODIFIED ELEMENTS
                 if (modifiedElementIds.Count > 0 && !transactionNames.Contains("Paste"))
                 {
-                    //Idling 시에 선택된 객체정보를 수집하는데, 드래그해서 위치 변경시 Idling 상태를 스킵하기 때문에 선택된 객체가 지정이 안되서
-                    //선택된 객체 정보를 다시 한번 수집.
                     selectedElements = GetSelectedElements();
 
                     List<TransactionLog> transactionLogs = transactionLog.GetTransactionLogs(modifiedElementIds, project, employee, EventType.Modified);
@@ -208,6 +176,38 @@ namespace Haeahn.Performance.Transaction
         public bool IsElementExist(Element element)
         {
             return rvt_doc.GetElement(element.Id) == null ? true : false;
+        }
+
+        public Project GetProject(Autodesk.Revit.DB.Document rvt_doc)
+        {
+            Project project = new Project();    
+
+            if (rvt_doc.IsFamilyDocument)
+            {
+                if (project == null)
+                {
+                    project = new Project("RFA", "RFA", "RFA");
+
+                }
+                project.Name = "RFA";
+                project.Code = "RFA";
+                project.Type = "RFA";
+            }
+            //프로젝트 파일
+            else
+            {
+                ProjectInfo projectInformation = rvt_doc.ProjectInformation;
+                if (projectInformation != null)
+                {
+                    project = new Project(projectInformation);
+                }
+                else
+                {
+                    project = new Project("TBD", "TBD", "TBD");
+                }
+            }
+
+            return project;
         }
     }
 }

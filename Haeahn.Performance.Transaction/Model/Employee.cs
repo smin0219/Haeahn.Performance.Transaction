@@ -11,7 +11,9 @@ namespace Haeahn.Performance.Transaction
         internal Employee() { }
         internal Employee(string employeeId)
         {
-            CreateEmployee(employeeId);
+            this.Name = "sj.min";
+            this.Id = employeeId;
+            this.Department = "IT연구실";
         }
         //EmployeeId = 사원번호
         internal string Id { get; set; }
@@ -19,16 +21,5 @@ namespace Haeahn.Performance.Transaction
         internal string Name { get; set; }
         //Department = 부서
         internal string Department { get; set; }
-        internal Employee CreateEmployee(string employeeId)
-        {
-            this.Name = "sj.min";
-            this.Id = employeeId;
-            this.Department = "IT연구실";
-            return this;
-        }
-        internal Employee GetEmployee()
-        {
-            return this;
-        }
     }
 }

@@ -10,13 +10,23 @@ namespace Haeahn.Performance.Transaction
     public class TransactionLog
     {
         public TransactionLog() { }
-        //internal TransactionLog(Project project, Employee employee, Haeahn.Performance.Transaction.EventType eventType)
-        //{
-        //    SetTransactionLog(project, employee, eventType);
-        //}
         internal TransactionLog(Project project, Employee employee, ViewType viewType, Haeahn.Performance.Transaction.EventType eventType, Element element = null)
         {
-            SetTransactionLog(project, employee, element, viewType, eventType);
+            this.ProjectCode = project.Code;
+            this.ProjectName = project.Name;
+            this.ProjectType = project.Type;
+            this.ElementId = (element.Id != null) ? element.Id.ToString() : null;
+            this.ElementName = (element.Name != null) ? element.Name.ToString() : null;
+            this.CategoryType = (element.CategoryType != null) ? element.CategoryType : null;
+            this.CategoryName = (element.CategoryName != null) ? element.CategoryName : null;
+            this.FamilyName = (element.FamilyName != null) ? element.FamilyName : null;
+            this.TypeName = (element.TypeName != null) ? element.TypeName : null;
+            this.ViewType = viewType.ToString();
+            this.EmployeeId = employee.Id;
+            this.EmployeeName = employee.Name;
+            this.Department = employee.Department;
+            this.EventType = eventType.ToString();
+            this.OccurredOn = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
         }
         public string ProjectCode { get; set; }
         public string ProjectName { get; set; }
@@ -34,47 +44,6 @@ namespace Haeahn.Performance.Transaction
         public string Department { get; set; }
         public string EventType { get; set; }
         public string OccurredOn { get; set; }
-        //internal TransactionLog SetTransactionLog(Project project, Employee employee, EventType eventType)
-        //{
-        //    this.ProjectCode = project.Code;    
-        //    this.ProjectName = project.Name;
-        //    this.ProjectType = project.Type;
-        //    this.ElementId = null;
-        //    this.ElementName = null;
-        //    this.CategoryType = null;
-        //    this.CategoryName = null;
-        //    this.ViewType = null;
-        //    this.FamilyName = null;
-        //    this.TypeName = null;
-        //    this.EmployeeId = employee.Id;
-        //    this.EmployeeName = employee.Name;
-        //    this.Department = employee.Department;
-        //    this.EventType = eventType.ToString();
-        //    this.OccurredOn = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
-
-        //    return this;
-        //}
-        internal TransactionLog SetTransactionLog(Project project, Employee employee, Element element, ViewType viewType, EventType eventType)
-        {
-            this.ProjectCode = project.Code;
-            this.ProjectName = project.Name;
-            this.ProjectType = project.Type;
-            this.ElementId = (element.Id != null) ? element.Id.ToString() : null;
-            this.ElementName = (element.Name != null) ? element.Name.ToString() : null;
-            this.CategoryType = (element.CategoryType != null) ? element.CategoryType : null;
-            this.CategoryName = (element.CategoryName != null) ? element.CategoryName : null;
-            this.FamilyName = (element.FamilyName != null) ? element.FamilyName : null;
-            this.TypeName = (element.TypeName != null) ? element.TypeName : null;
-            this.ViewType = viewType.ToString();
-            this.EmployeeId = employee.Id;
-            this.EmployeeName = employee.Name;
-            this.Department = employee.Department;
-            this.EventType = eventType.ToString();
-            this.OccurredOn = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
-
-            return this;
-        }
-          
         internal List<TransactionLog> GetTransactionLogs(ICollection<Autodesk.Revit.DB.ElementId> elementIds, Project project, Employee employee, EventType eventType)
         {
             var currentDateTime = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
@@ -94,7 +63,6 @@ namespace Haeahn.Performance.Transaction
                     if (rvt_element != null)
                     {
                         element = new Element(rvt_element);
-
                         transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
                     }
                     
@@ -107,22 +75,6 @@ namespace Haeahn.Performance.Transaction
                         transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
                     }
                 }
-
-                //if (eventType != Haeahn.Performance.Transaction.EventType.Deleted)
-                //{
-                //    rvt_element = ExternalApplication.rvt_doc.GetElement(elementId);
-                //    if(rvt_element != null)
-                //    {
-                //        element = new Element(rvt_element);
-
-                //        transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
-                //    }
-                //}
-                //else
-                //{
-                //    transactionLogs.Add(new TransactionLog(project, employee, viewType, Haeahn.Performance.Transaction.EventType.Deleted));
-                //    transactionLogs.Where(x => x.EventType == Haeahn.Performance.Transaction.EventType.Deleted.ToString()).Last().ElementId = elementId.ToString();
-                //}
             }
 
             return transactionLogs;

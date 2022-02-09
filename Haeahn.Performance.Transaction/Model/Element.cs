@@ -13,20 +13,6 @@ namespace Haeahn.Performance.Transaction
         internal Element() { }
         internal Element(Autodesk.Revit.DB.Element rvt_element)
         {
-            SetElement(rvt_element);
-        }
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string ProjectCode { get; set; }
-        public string ProjectName { get; set; }
-        public string CategoryName { get; set; }
-        public string CategoryType { get; set; }
-        public string FamilyName { get; set; }
-        public string TypeName { get; set; }
-
-        //레벳의 객체를 필요한 정보만 따로 정리한 Element로 만들어서 반환한다.
-        internal Element SetElement(Autodesk.Revit.DB.Element rvt_element)
-        {
             try
             {
                 var rvt_doc = ExternalApplication.rvt_doc;
@@ -42,21 +28,27 @@ namespace Haeahn.Performance.Transaction
                 FamilyInstance familyInstance = rvt_element as FamilyInstance;
                 ElementType type = rvt_doc.GetElement(rvt_element.GetTypeId()) as ElementType;
 
-                if(type != null)
+                if (type != null)
                 {
                     this.FamilyName = type.FamilyName;
                     this.TypeName = type.Name;
                 }
-
-                return this;
             }
             catch (Exception ex)
             {
                 Debug.Assert(false, ex.ToString());
                 Log.WriteToFile(ex.ToString());
-                return null;
             }
         }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string ProjectCode { get; set; }
+        public string ProjectName { get; set; }
+        public string CategoryName { get; set; }
+        public string CategoryType { get; set; }
+        public string FamilyName { get; set; }
+        public string TypeName { get; set; }
+
         internal Autodesk.Revit.DB.ElementFilter GetElementFilterByCategoryTypes(List<Autodesk.Revit.DB.CategoryType> categoryTypes)
         {
             List<Autodesk.Revit.DB.ElementFilter> elementFilters = new List<Autodesk.Revit.DB.ElementFilter>();
