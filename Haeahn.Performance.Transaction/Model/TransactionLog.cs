@@ -65,7 +65,6 @@ namespace Haeahn.Performance.Transaction
                         element = new Element(rvt_element);
                         transactionLogs.Add(new TransactionLog(project, employee, viewType, eventType, element));
                     }
-                    
                 }
                 else
                 { 

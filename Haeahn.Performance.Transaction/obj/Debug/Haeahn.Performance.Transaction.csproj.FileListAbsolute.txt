@@ -81,3 +81,4 @@ C:\Users\SungjaeMin\source\repos\Performance\Haeahn.Performance.Transaction\obj\
 C:\Users\SungjaeMin\source\repos\Performance\Haeahn.Performance.Transaction\obj\Debug\Haeahn.Performance.Transaction.csproj.CopyComplete
 C:\Users\SungjaeMin\source\repos\Performance\Haeahn.Performance.Transaction\obj\Debug\Haeahn.Performance.Transaction.dll
 C:\Users\SungjaeMin\source\repos\Performance\Haeahn.Performance.Transaction\obj\Debug\Haeahn.Performance.Transaction.pdb
+C:\Users\SungjaeMin\source\repos\Performance\Haeahn.Performance.Transaction\obj\Debug\Haeahn.Performance.Transaction.csproj.AssemblyReference.cache

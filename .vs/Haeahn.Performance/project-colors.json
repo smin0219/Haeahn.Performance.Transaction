@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f2483f7b-8fce-482f-a13d-a858dc793656": {
+      "ProjectGuid": "f2483f7b-8fce-482f-a13d-a858dc793656",
+      "DisplayName": "Haeahn.Performance.Revit",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "a8845975-36b2-462e-b7ef-d66ebea81040": {
+      "ProjectGuid": "a8845975-36b2-462e-b7ef-d66ebea81040",
+      "DisplayName": "Transaction.Revit",
+      "ColorIndex": 1
+    },
+    "ca3a3bbe-4403-4097-8090-d010a743ac91": {
+      "ProjectGuid": "ca3a3bbe-4403-4097-8090-d010a743ac91",
+      "DisplayName": "Haeahn.Performance.Transaction.Revit",
+      "ColorIndex": 2
+    },
+    "0e0ef68d-1827-482c-9793-69511719c30a": {
+      "ProjectGuid": "0e0ef68d-1827-482c-9793-69511719c30a",
+      "DisplayName": "Haeahn.Performance.Collection.Revit",
+      "ColorIndex": 3
+    },
+    "a5054f37-f40c-4556-a2e3-eef1693d6350": {
+      "ProjectGuid": "a5054f37-f40c-4556-a2e3-eef1693d6350",
+      "DisplayName": "Haeahn.Performance.Transaction",
+      "ColorIndex": 4
+    },
+    "f77eb5a5-f492-4721-82bf-b01b63615d58": {
+      "ProjectGuid": "f77eb5a5-f492-4721-82bf-b01b63615d58",
+      "DisplayName": "Haeahn.Performance.Collector",
+      "ColorIndex": 5
+    },
+    "bfa9a9db-c706-41b4-b574-b3f7ed7197e6": {
+      "ProjectGuid": "bfa9a9db-c706-41b4-b574-b3f7ed7197e6",
+      "DisplayName": "Haeahn.Performance.Evaluation",
+      "ColorIndex": 6
+    },
+    "aca44ad9-22a3-4956-b503-e7193c65f0ab": {
+      "ProjectGuid": "aca44ad9-22a3-4956-b503-e7193c65f0ab",
+      "DisplayName": "Haeahn.Career.Revit.Report",
+      "ColorIndex": 7
+    }
+  },
+  "NextColorIndex": 8
+}

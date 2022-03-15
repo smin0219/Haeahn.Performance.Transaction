@@ -20,7 +20,7 @@ namespace Haeahn.Performance.Transaction
         {
             return String.Format("Data Source=.;Initial Catalog=Performance;Integrated Security=True;");
         }
-        #region Insert
+        #region INSERT
         internal void InsertTransactionLogs(IEnumerable<TransactionLog> transactionLogs)
         {
             try

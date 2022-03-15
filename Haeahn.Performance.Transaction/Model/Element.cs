@@ -48,7 +48,6 @@ namespace Haeahn.Performance.Transaction
         public string CategoryType { get; set; }
         public string FamilyName { get; set; }
         public string TypeName { get; set; }
-
         internal Autodesk.Revit.DB.ElementFilter GetElementFilterByCategoryTypes(List<Autodesk.Revit.DB.CategoryType> categoryTypes)
         {
             List<Autodesk.Revit.DB.ElementFilter> elementFilters = new List<Autodesk.Revit.DB.ElementFilter>();

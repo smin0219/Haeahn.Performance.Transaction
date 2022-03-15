@@ -43,22 +43,6 @@ namespace Haeahn.Performance.Transaction
 
             return Result.Succeeded;
         }
-
-        private void OnElementDeleted(object sender, ExecutedEventArgs args)
-        {
-            selectedElements = GetSelectedElements();
-            UIApplication uiapp = sender as UIApplication;
-            Document doc = uiapp.ActiveUIDocument.Document;
-            using (Autodesk.Revit.DB.Transaction transaction = new Autodesk.Revit.DB.Transaction(doc, "Delete Selection"))
-            {
-                if (transaction.Start() == TransactionStatus.Started)
-                {
-                    doc.Delete(uiapp.ActiveUIDocument.Selection.GetElementIds());
-                    transaction.Commit();
-                }
-            }
-        }
-
         public Result OnShutdown(UIControlledApplication application)
         {
             throw new NotImplementedException();
@@ -79,7 +63,7 @@ namespace Haeahn.Performance.Transaction
 
                 if (rvt_doc != null)
                 {
-                    project = GetProject(rvt_doc);
+                    project = CreateProject(rvt_doc);
                 }
             }
         }
@@ -153,7 +137,6 @@ namespace Haeahn.Performance.Transaction
                 Log.WriteToFile(ex.ToString());
             }
         }
-
         public List<Element> GetSelectedElements()
         {
             var selectedElements = new List<Element>();
@@ -172,13 +155,21 @@ namespace Haeahn.Performance.Transaction
 
             return selectedElements;
         }
-
-        public bool IsElementExist(Element element)
+        private void OnElementDeleted(object sender, ExecutedEventArgs args)
         {
-            return rvt_doc.GetElement(element.Id) == null ? true : false;
+            selectedElements = GetSelectedElements();
+            UIApplication uiapp = sender as UIApplication;
+            Document doc = uiapp.ActiveUIDocument.Document;
+            using (Autodesk.Revit.DB.Transaction transaction = new Autodesk.Revit.DB.Transaction(doc, "Delete Selection"))
+            {
+                if (transaction.Start() == TransactionStatus.Started)
+                {
+                    doc.Delete(uiapp.ActiveUIDocument.Selection.GetElementIds());
+                    transaction.Commit();
+                }
+            }
         }
-
-        public Project GetProject(Autodesk.Revit.DB.Document rvt_doc)
+        public Project CreateProject(Autodesk.Revit.DB.Document rvt_doc)
         {
             Project project = new Project();    
 
