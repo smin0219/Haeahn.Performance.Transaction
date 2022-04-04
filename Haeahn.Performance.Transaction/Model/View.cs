@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Haeahn.Performance.Transaction
+namespace Haeahn.Performance.Transaction.Model
 {
     internal class View
     {

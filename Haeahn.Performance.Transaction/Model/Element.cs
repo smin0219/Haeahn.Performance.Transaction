@@ -1,12 +1,14 @@
 ﻿using Autodesk.Revit.DB;
+using Haeahn.Performance.Transaction.Data;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Haeahn.Performance.Transaction
+namespace Haeahn.Performance.Transaction.Model
 {
     class Element
     {
@@ -36,8 +38,8 @@ namespace Haeahn.Performance.Transaction
             }
             catch (Exception ex)
             {
-                Debug.Assert(false, ex.ToString());
-                Log.WriteToFile(ex.ToString());
+                DAO dao = new DAO();
+                dao.InsertErrorLog(new ErrorLog(ExternalApplication.project.Name, ExternalApplication.employee.Id, ex.Message, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
             }
         }
         public string Id { get; set; }
@@ -48,19 +50,6 @@ namespace Haeahn.Performance.Transaction
         public string CategoryType { get; set; }
         public string FamilyName { get; set; }
         public string TypeName { get; set; }
-        internal Autodesk.Revit.DB.ElementFilter GetElementFilterByCategoryTypes(List<Autodesk.Revit.DB.CategoryType> categoryTypes)
-        {
-            List<Autodesk.Revit.DB.ElementFilter> elementFilters = new List<Autodesk.Revit.DB.ElementFilter>();
-            Autodesk.Revit.DB.Categories categories = ExternalApplication.rvt_doc.Settings.Categories;
-
-            foreach (Autodesk.Revit.DB.Category category in categories)
-            {
-                if (categoryTypes.Contains(category.CategoryType))
-                {
-                    elementFilters.Add(new Autodesk.Revit.DB.ElementCategoryFilter(category.Id));
-                }
-            }
-            return new Autodesk.Revit.DB.LogicalOrFilter(elementFilters);
-        }
+        
     }
 }

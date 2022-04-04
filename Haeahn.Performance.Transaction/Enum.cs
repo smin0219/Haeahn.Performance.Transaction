@@ -13,7 +13,8 @@ namespace Haeahn.Performance.Transaction
         Created,
         Added,
         Deleted,
-        Modified
+        Modified,
+        Sync
     }
     public enum ViewType
     {
@@ -22,5 +23,26 @@ namespace Haeahn.Performance.Transaction
         Sheet,
         Drafting,
         Normal
+    }
+
+    public enum LoginResult
+    {
+        LoginSsoSucceeded,
+        LoginSsoFailed,
+
+        HUserLoginSucceeded,
+        HUserLoginFailed,
+
+        UuidLoginSucceeded,
+        UuidLoginFailed,
+
+        Succeeded,
+        Cancelled,
+    }
+
+    public enum CommandType
+    {
+        Default = 0,
+        PreselectElements = 1   // 레빗 객체 선택 동작 수반하는 명령
     }
 }
