@@ -1,4 +1,4 @@
-﻿using Haeahn.Performance.Transaction;
+﻿using Haeahn.Performance.Transaction.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +13,12 @@ namespace Haeahn.Performance.Evaluation
         {
             DAO dao = new DAO(); 
             var employeeId = "20210916";
-            List<TransactionLog> transactionLogs = dao.SelectTransactionLogs(employeeId);
+            List<ElementLog> transactionLogs = dao.SelectTransactionLogs(employeeId);
             Evaluator evaluator = new Evaluator();
             evaluator.Evaluate(transactionLogs);
         }
 
-        public void Evaluate(List<TransactionLog> transactionLogs)
+        public void Evaluate(List<ElementLog> transactionLogs)
         {
         }
     }

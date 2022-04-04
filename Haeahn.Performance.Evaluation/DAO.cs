@@ -1,4 +1,5 @@
 ﻿using Haeahn.Performance.Transaction;
+using Haeahn.Performance.Transaction.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,11 +15,11 @@ namespace Haeahn.Performance.Evaluation
         {
             return String.Format("Data Source=.;Initial Catalog=Performance;Integrated Security=True;");
         }
-        internal List<TransactionLog> SelectTransactionLogs(string employeeId, DateTime from = default, DateTime to = default)
+        internal List<ElementLog> SelectTransactionLogs(string employeeId, DateTime from = default, DateTime to = default)
          {
             try
             {
-                List<TransactionLog> transactionLogs = new List<TransactionLog>();  
+                List<ElementLog> transactionLogs = new List<ElementLog>();  
 
                 using (SqlConnection connection = new SqlConnection())
                 {
@@ -39,7 +40,7 @@ namespace Haeahn.Performance.Evaluation
 
                     while (reader.Read())
                     {
-                        TransactionLog transactionLog = new TransactionLog();
+                        ElementLog transactionLog = new ElementLog();
                         transactionLog.ProjectCode = reader["project_code"].ToString();
                         transactionLog.ProjectName = reader["project_name"].ToString();
                         transactionLog.ProjectType = reader["project_type"].ToString();
@@ -52,8 +53,6 @@ namespace Haeahn.Performance.Evaluation
                         transactionLog.TypeName = reader["type_name"].ToString();
                         transactionLog.TransactionName = reader["transaction_name"].ToString();
                         transactionLog.EmployeeId = reader["employee_id"].ToString();
-                        transactionLog.EmployeeName = reader["employee_name"].ToString();
-                        transactionLog.Department = reader["department"].ToString();
                         transactionLog.EventType = reader["event_type"].ToString();
                         transactionLog.OccurredOn = reader["occurred_on"].ToString();
 
