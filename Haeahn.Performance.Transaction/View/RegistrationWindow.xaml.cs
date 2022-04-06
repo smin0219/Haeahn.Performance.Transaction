@@ -1,5 +1,4 @@
-﻿using DevExpress.Xpf.Core;
-using Haeahn.Performance.Transaction.ViewModel;
+﻿using Haeahn.Performance.Transaction.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,11 +18,16 @@ namespace Haeahn.Performance.Transaction.View
     /// <summary>
     /// Interaction logic for RegistrationWindow.xaml
     /// </summary>
-    public partial class RegistrationWindow : ThemedWindow
+    public partial class RegistrationWindow : Window
     {
+        RegistrationViewModel viewModel = null;
+
         public RegistrationWindow()
         {
             InitializeComponent();
+
+            viewModel = new RegistrationViewModel();
+            DataContext = viewModel;
 
             System.Windows.Interop.WindowInteropHelper helper = new System.Windows.Interop.WindowInteropHelper(this);
             helper.Owner = Autodesk.Windows.ComponentManager.ApplicationWindow;
@@ -31,7 +35,12 @@ namespace Haeahn.Performance.Transaction.View
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            (this.DataContext as RegistrationViewModel).Password = (sender as PasswordBox).Password;
+            viewModel.Password = (sender as PasswordBox).Password;
+        }
+
+        private void connectButton_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.CmdRun.Execute(null);
         }
     }
 }

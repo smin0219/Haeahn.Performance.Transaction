@@ -170,7 +170,7 @@ namespace Haeahn.Performance.Transaction
             // 3. UUID가 없을 경우 > POST /api/loginsso SSO 로그인 API 호출(RegistrationWindow 띄움)
             // RegistrationWindow 띄워서 사용자 ID, PW 받음
             var viewModel = new RegistrationViewModel();
-            var registrationWindow = new RegistrationWindow() { DataContext = viewModel };
+            var registrationWindow = new RegistrationWindow();
             var loginSsoResult = registrationWindow.ShowDialog();
             if (viewModel._loginSsoResult == LoginResult.LoginSsoSucceeded) // RegistrationWindow에서 OkCommand 실행('Connect' 버튼 클릭)
             {

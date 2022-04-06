@@ -81,9 +81,9 @@ namespace Haeahn.Performance.Transaction
         }
         public Result OnShutdown(UIControlledApplication application)
         {
-            var warnings = rvt_doc.GetWarnings();
-            InsertWarningsToDB(warnings);
-            InsertTransactionLogToDB(new TransactionLog(project.Code, employee.Id, "Revit Shut Down", DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
+            //var warnings = rvt_doc.GetWarnings();
+            //InsertWarningsToDB(warnings);
+            //InsertTransactionLogToDB(new TransactionLog(project.Code, employee.Id, "Revit Shut Down", DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
             return Result.Succeeded;
         }
 
