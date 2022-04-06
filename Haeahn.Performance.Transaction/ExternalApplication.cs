@@ -127,6 +127,7 @@ namespace Haeahn.Performance.Transaction
         }
         private void OnDocumentSaved(object sender, DocumentSavedEventArgs args)
         {
+            System.Windows.Forms.MessageBox.Show("test");
             InsertTransactionLogToDB(new TransactionLog(project.Code, employee.Id, "Document Saved", DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
             var warnings = rvt_doc.GetWarnings();
             InsertWarningsToDB(warnings);
