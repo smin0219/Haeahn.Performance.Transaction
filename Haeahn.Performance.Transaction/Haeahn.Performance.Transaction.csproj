@@ -99,7 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\computer-cloud-icon_234959.png" />
-    <Resource Include="Resources\HAEAHN_LOGO.png" />
+    <Resource Include="Resources\HAEAHN_LOGO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Content Include="View\computer-cloud-icon_234959.png" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +109,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Image\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

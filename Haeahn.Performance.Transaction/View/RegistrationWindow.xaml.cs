@@ -21,6 +21,7 @@ namespace Haeahn.Performance.Transaction.View
     public partial class RegistrationWindow : Window
     {
         RegistrationViewModel viewModel = null;
+        public LoginResult loginResult { get; set; }
 
         public RegistrationWindow()
         {
@@ -38,9 +39,17 @@ namespace Haeahn.Performance.Transaction.View
             viewModel.Password = (sender as PasswordBox).Password;
         }
 
-        private void connectButton_Click(object sender, RoutedEventArgs e)
+        private void ConnectButton_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.CmdRun.Execute(null);
+            viewModel.CmdRun.Execute(viewModel);
+            Close();
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.CmdCancel.Execute(viewModel);
+            loginResult = LoginResult.Cancelled;
+            Close();
         }
     }
 }

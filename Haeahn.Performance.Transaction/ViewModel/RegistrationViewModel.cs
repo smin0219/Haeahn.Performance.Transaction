@@ -13,6 +13,7 @@ namespace Haeahn.Performance.Transaction.ViewModel
     {
         public RelayCommand CmdRun { get; set; }
         public RelayCommand CmdClose { get; set; }
+        public RelayCommand CmdCancel { get; set; }
 
         internal LoginResult _loginSsoResult;
 
@@ -33,6 +34,7 @@ namespace Haeahn.Performance.Transaction.ViewModel
         public RegistrationViewModel()
         {
             CmdRun = new RelayCommand(Run);
+            CmdCancel = new RelayCommand(Cancel);
         }
 
         private void Run(object obj)
@@ -43,11 +45,17 @@ namespace Haeahn.Performance.Transaction.ViewModel
 
             if (LoginResult.LoginSsoSucceeded == _loginSsoResult)
             {
+                
             }
             else
             {
                 ShowErrorMessage("잘못된 사용자 이름 또는 비밀번호 입니다.\n다시 입력해주세요.");
             }
+        }
+
+        private void Cancel(object obj)
+        {
+            _loginSsoResult = LoginResult.Cancelled;
         }
 
 

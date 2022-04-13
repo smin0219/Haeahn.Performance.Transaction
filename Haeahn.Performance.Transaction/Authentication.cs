@@ -172,7 +172,7 @@ namespace Haeahn.Performance.Transaction
             var viewModel = new RegistrationViewModel();
             var registrationWindow = new RegistrationWindow();
             var loginSsoResult = registrationWindow.ShowDialog();
-            if (viewModel._loginSsoResult == LoginResult.LoginSsoSucceeded) // RegistrationWindow에서 OkCommand 실행('Connect' 버튼 클릭)
+            if (registrationWindow.loginResult == LoginResult.LoginSsoSucceeded) // RegistrationWindow에서 OkCommand 실행('Connect' 버튼 클릭)
             {
                 // 3.1 EMP_NO 반환되면 POST /api/huserlogin 호출 (AutoDesk ID가 있으면 입력, 없으면 생략)
                 if (!string.IsNullOrWhiteSpace(CurrentUser.Instance.EmpNo))

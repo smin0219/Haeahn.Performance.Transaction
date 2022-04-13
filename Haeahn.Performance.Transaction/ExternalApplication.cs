@@ -35,6 +35,7 @@ namespace Haeahn.Performance.Transaction
 
         public Result OnStartup(Autodesk.Revit.UI.UIControlledApplication application)
         {
+            
             Authentication auth = new Authentication();
 
             while (true)
