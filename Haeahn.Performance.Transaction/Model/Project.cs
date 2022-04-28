@@ -7,26 +7,26 @@ using Autodesk.Revit.DB;
 
 namespace Haeahn.Performance.Transaction.Model
 {
-    internal class Project
+    public class Project
     {
-        internal Project() {}
-        internal Project(string name, string code, string type, bool isCentral, string centralFilePath) 
+        public Project() {}
+        public Project(string name, string code, string type, bool isCentral, string filePath) 
         {
             this.Name = name;  
             this.Code = code;
             this.Type = type;
             this.IsCentral = isCentral;
-            this.CentralFilePath = centralFilePath;
+            this.FilePath = filePath;
         }
-        internal Project(Autodesk.Revit.DB.ProjectInfo projectInfo, bool isCentral, string centralFilePath)
+        public Project(Autodesk.Revit.DB.ProjectInfo projectInfo, bool isCentral, string filePath)
         {
             this.Name = projectInfo.Name;
             this.Code = projectInfo.Number.ToString();
-            this.Type = "기획설계";
+            this.Type = "";
             this.IsCentral = isCentral;
-            this.CentralFilePath = centralFilePath;
+            this.FilePath = filePath;
         }
-        internal Project(Autodesk.Revit.DB.Document rvt_doc, bool isCentral, string centralFilePath)
+        public Project(Autodesk.Revit.DB.Document rvt_doc, bool isCentral, string filePath)
         {
             if (rvt_doc.IsFamilyDocument)
             {
@@ -34,7 +34,7 @@ namespace Haeahn.Performance.Transaction.Model
                 this.Code = "RFA";
                 this.Type = "RFA";
                 this.IsCentral = isCentral;
-                this.CentralFilePath = centralFilePath;
+                this.FilePath = filePath;
             }
             //프로젝트 파일
             else
@@ -46,7 +46,7 @@ namespace Haeahn.Performance.Transaction.Model
                     this.Code = projectInformation.Number;
                     this.Type = "기획설계";
                     this.IsCentral = isCentral;
-                    this.CentralFilePath = centralFilePath;
+                    this.FilePath = filePath;
                 }
                 else
                 {
@@ -54,7 +54,7 @@ namespace Haeahn.Performance.Transaction.Model
                     this.Code = "RFA";
                     this.Type = "RFA";
                     this.IsCentral = isCentral;
-                    this.CentralFilePath = centralFilePath;
+                    this.FilePath = filePath;
                 }
             }
         }
@@ -62,6 +62,6 @@ namespace Haeahn.Performance.Transaction.Model
         internal string Code { get; set; }
         internal string Type { get; set; }
         internal bool IsCentral { get; set; }
-        internal string CentralFilePath { get; set; }
+        internal string FilePath { get; set; }
     }
 }

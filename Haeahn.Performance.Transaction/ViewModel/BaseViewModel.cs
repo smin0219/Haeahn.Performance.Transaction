@@ -28,11 +28,9 @@ namespace Haeahn.Performance.Transaction.ViewModel
 
             if (null != WarningMessage)
             {
-                //MessageBox.Show(WarningMessage, "Warning", MessageBoxButton.OK, MessageBoxImage.Warning, MessageBoxResult.OK);
                 TaskDialog taskDialog = new TaskDialog("Warning");
                 taskDialog.TitleAutoPrefix = true;
                 taskDialog.MainIcon = TaskDialogIcon.TaskDialogIconWarning;
-                //taskDialog.MainInstruction = "Completed";
                 taskDialog.MainContent = WarningMessage;
                 taskDialog.CommonButtons = TaskDialogCommonButtons.Ok;
                 taskDialog.Show();

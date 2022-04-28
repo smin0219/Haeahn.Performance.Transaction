@@ -3,7 +3,7 @@
 	<AddIn Type="Application">
 		<Name>Application Performance</Name>
 		<Assembly>Haeahn.Performance.Transaction.dll</Assembly>
-		<FullClassName>Haeahn.Performance.Transaction.ExternalApplication</FullClassName>
+		<FullClassName>Haeahn.Performance.Transaction.PerformanceApplication</FullClassName>
 		<ClientId>EE6B9DD2-F362-4A7A-9EB8-62BA5BC5D8AD</ClientId>
 		<VendorId>ADSK</VendorId>
 		<VendorDescription>Autodesk, www.autodesk.com</VendorDescription>

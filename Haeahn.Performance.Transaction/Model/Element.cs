@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace Haeahn.Performance.Transaction.Model
 {
-    class Element
+    public class Element
     {
         internal Element() { }
         internal Element(Autodesk.Revit.DB.Element rvt_element)
         {
             try
             {
-                var rvt_doc = ExternalApplication.rvt_doc;
+                var rvt_doc = PerformanceApplication.rvt_doc;
                 var projectInformation = rvt_doc.ProjectInformation;
 
                 this.Id = rvt_element.Id.ToString();
@@ -39,7 +39,8 @@ namespace Haeahn.Performance.Transaction.Model
             catch (Exception ex)
             {
                 DAO dao = new DAO();
-                dao.InsertErrorLog(new ErrorLog(ExternalApplication.project.Name, ExternalApplication.employee.Id, ex.Message, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
+                var errorMsg = ex.Message + '\n' + ex.StackTrace;
+                dao.InsertErrorLog(new ErrorLog(PerformanceApplication.project.Name, PerformanceApplication.employee.Id, errorMsg, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
             }
         }
         public string Id { get; set; }

@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Xml;
 
 
@@ -31,7 +32,7 @@ namespace Haeahn.Performance.Transaction.Data
                 {
                     SqlCommand command = new SqlCommand("INSERT INTO TB_PERFORMANCE_ELEMENT_LOG VALUES" +
                         "(@project_code, @project_name, @project_type, @element_id, @element_name, @category_type, @category_name, " +
-                        "@view_type, @family_name, @type_name, @transaction_name, @employee_id, @event_type, @occurred_on, @is_central, @central_file_path)", connection);
+                        "@view_type, @family_name, @type_name, @transaction_name, @employee_id, @event_type, @occurred_on, @is_central, @file_path)", connection);
 
                     connection.ConnectionString = GetConnectionString();
                     connection.Open();
@@ -51,7 +52,7 @@ namespace Haeahn.Performance.Transaction.Data
                     command.Parameters.Add("@event_type", SqlDbType.NVarChar);
                     command.Parameters.Add("@occurred_on", SqlDbType.NVarChar);
                     command.Parameters.Add("@is_central", SqlDbType.Bit);
-                    command.Parameters.Add("@central_file_path", SqlDbType.NVarChar);
+                    command.Parameters.Add("@file_path", SqlDbType.NVarChar);
 
                     foreach (var elementLog in elementLogs)
                     {
@@ -70,7 +71,7 @@ namespace Haeahn.Performance.Transaction.Data
                         command.Parameters["@event_type"].Value = (object)elementLog.EventType ?? DBNull.Value;
                         command.Parameters["@occurred_on"].Value = (object)elementLog.OccurredOn ?? DBNull.Value;
                         command.Parameters["@is_central"].Value = (object)elementLog.IsCentral ?? DBNull.Value;
-                        command.Parameters["@central_file_path"].Value = (object)elementLog.CentralFilePath ?? DBNull.Value;
+                        command.Parameters["@file_path"].Value = (object)elementLog.FilePath ?? DBNull.Value;
 
                         command.ExecuteNonQuery();
                     }
@@ -79,7 +80,8 @@ namespace Haeahn.Performance.Transaction.Data
             catch (Exception ex)
             {
                 DAO dao = new DAO();
-                dao.InsertErrorLog(new ErrorLog(ExternalApplication.project.Name, ExternalApplication.employee.Id, ex.Message, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
+                var errorMsg = ex.Message + '\n' + ex.StackTrace;
+                dao.InsertErrorLog(new ErrorLog(PerformanceApplication.project.Name, PerformanceApplication.employee.Id, errorMsg, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
             }
         }
         internal void InsertTransactionLog(TransactionLog transactionLog)
@@ -110,7 +112,8 @@ namespace Haeahn.Performance.Transaction.Data
             }
             catch (Exception ex)
             {
-                InsertErrorLog(new ErrorLog(ExternalApplication.project.Name, ExternalApplication.employee.Id, ex.Message, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
+                var errorMsg = ex.Message + '\n' + ex.StackTrace;
+                InsertErrorLog(new ErrorLog(PerformanceApplication.project.Name, PerformanceApplication.employee.Id, errorMsg, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
             }
         }
         internal void InsertErrorLog(ErrorLog errorLog)
@@ -137,12 +140,11 @@ namespace Haeahn.Performance.Transaction.Data
                     command.Parameters["@occurred_on"].Value = (object)errorLog.OccurredOn ?? DBNull.Value;
 
                     command.ExecuteNonQuery();
-                  
                 }
             }
             catch (Exception ex)
             {
-                Debug.Assert(false, "IT 연구소 민성재 선임(7852)으로 연락 부탁드립니다.");
+                MessageBox.Show("IT 연구소 [민성재: 7852]로 연락 부탁드립니다.");
             }
         }
         internal void InsertWarnings(IEnumerable<Warning> warnings)
@@ -154,7 +156,7 @@ namespace Haeahn.Performance.Transaction.Data
                     connection.ConnectionString = GetConnectionString();
                     connection.Open();
 
-                    string deleteQueryString = string.Format("DELETE FROM TB_PERFORMANCE_WARNING WHERE project_code='{0}'", ExternalApplication.project.Code);
+                    string deleteQueryString = string.Format("DELETE FROM TB_PERFORMANCE_WARNING WHERE project_code='{0}'", PerformanceApplication.project.Code);
                     SqlCommand deleteCmd = new SqlCommand(deleteQueryString, connection);
                     deleteCmd.ExecuteNonQuery();
 
@@ -182,7 +184,31 @@ namespace Haeahn.Performance.Transaction.Data
             }
             catch (Exception ex)
             {
-                InsertErrorLog(new ErrorLog(ExternalApplication.project.Name, ExternalApplication.employee.Id, ex.Message, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
+                var errorMsg = ex.Message + '\n' + ex.StackTrace;
+                InsertErrorLog(new ErrorLog(PerformanceApplication.project.Name, PerformanceApplication.employee.Id, errorMsg, DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"))));
+            }
+        }
+        #endregion
+        #region
+        internal string GetLatestVersionNumber()
+        {
+            using (SqlConnection connection = new SqlConnection())
+            {
+                connection.ConnectionString = GetConnectionString();
+                connection.Open();
+                string selectQueryString = "SELECT version_number FROM TB_PERFORMANCE_VERSION WHERE is_update = 1";
+                SqlCommand selectCmd = new SqlCommand(selectQueryString, connection);
+
+                var reader = selectCmd.ExecuteReader();
+
+                string versionNumber = "";
+
+                while (reader.Read())
+                {
+                    versionNumber = reader[0].ToString();
+                }
+
+                return versionNumber;
             }
         }
         #endregion

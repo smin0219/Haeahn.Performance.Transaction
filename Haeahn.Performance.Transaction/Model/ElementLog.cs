@@ -28,7 +28,7 @@ namespace Haeahn.Performance.Transaction.Model
             this.EventType = eventType.ToString();
             this.OccurredOn = DateTime.Now.ToString("yyyyMMdd HH:mm:ss tt", CultureInfo.CreateSpecificCulture("en-US"));
             this.IsCentral = project.IsCentral;
-            this.CentralFilePath = project.CentralFilePath;
+            this.FilePath = project.FilePath;
         }
         public string ProjectCode { get; set; }
         public string ProjectName { get; set; }
@@ -45,6 +45,6 @@ namespace Haeahn.Performance.Transaction.Model
         public string EventType { get; set; }
         public string OccurredOn { get; set; }
         public bool IsCentral { get; set; }
-        public string CentralFilePath { get; set; }  
+        public string FilePath { get; set; }  
     }
 }

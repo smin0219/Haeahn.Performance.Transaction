@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Haeahn.Performance.Transaction.Model
 {
-    class Employee
+    public class Employee
     {
         internal Employee() { }
         internal Employee(string name, string employeeId, string department)
